@@ -1,3 +1,4 @@
+
 'use client';
 
 import Link from 'next/link';
@@ -404,29 +405,3 @@ export default function Home() {
           </div>
         </div>
       </section>
-
-      {/* Footer */}
-      <footer className="bg-gray-900 text-white py-12 px-4 border-t border-slate-800">
-        <div className="max-w-7xl mx-auto text-center">
-          <div className="flex items-center justify-center space-x-3 mb-6">
-            <div className="w-10 h-10 bg-amber-600 rounded-full flex items-center justify-center">
-              <i className="ri-heart-3-line text-white text-xl"></i>
-            </div>
-            <h3 className="text-2xl font-bold text-slate-100">드림심리상담센터</h3>
-          </div>
-          <p className="text-slate-400 mb-6 max-w-2xl mx-auto">
-            전문적이고 따뜻한 심리상담으로 당신의 마음을 돌봅니다. <br />
-            건강한 마음, 행복한 삶을 위한 동반자가 되겠습니다.
-          </p>
-          <div className="text-slate-400 mb-8">
-            <p>대구광역시 수성구 동대구로 346 범 위해서 오피스텔</p>
-            <p>전화: 053-759-1282</p>
-          </div>
-          <div className="border-t border-slate-800 pt-8">
-            <p className="text-slate-500">&copy; 2024 드림심리상담센터. All rights reserved.</p>
-          </div>
-        </div>
-      </footer>
-    </div>
-  );
-}
