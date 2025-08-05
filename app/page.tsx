@@ -7,28 +7,19 @@ export default function Home() {
     <div className="min-h-screen bg-gradient-to-br from-gray-900 via-slate-800 to-gray-900">
       {/* Header */}
       <header className="bg-slate-900 shadow-lg border-b border-slate-700">
-        <div className="max-w-7xl mx-auto px-4 py-4">
-          <div className="flex justify-between items-center">
-            <div className="flex items-center space-x-3">
-              <img
-                src="/20250801_151941.png"
-                alt="드림심리상담센터 로고"
-                className="w-10 h-10 rounded-full object-cover shadow-md border border-amber-500"
-                style={{ background: "#fff" }}
-              />
-              <div>
-                <h1 className="text-xl font-bold text-slate-100">드림심리상담센터</h1>
-                <p className="text-sm text-amber-400">전문 심리상담 서비스</p>
-              </div>
-            </div>
-            <nav className="hidden md:flex space-x-8">
-              <Link href="/" className="text-slate-100 font-medium hover:text-amber-400 transition-colors cursor-pointer">홈</Link>
-              <Link href="/counseling" className="text-slate-300 hover:text-amber-400 transition-colors cursor-pointer">심리상담</Link>
-              <Link href="/test" className="text-slate-300 hover:text-amber-400 transition-colors cursor-pointer">심리검사</Link>
-              <Link href="/support" className="text-slate-300 hover:text-amber-400 transition-colors cursor-pointer">전국민마음투자지원사업</Link>
-              <Link href="/eap" className="text-slate-300 hover:text-amber-400 transition-colors cursor-pointer">EAP 기업심리상담</Link>
-            </nav>
-          </div>
+        <div className="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
+          <img
+            src="/20250801_151941.png"
+            alt="드림심리상담센터 로고"
+            className="h-12 md:h-14 w-auto block"
+          />
+          <nav className="hidden md:flex space-x-8">
+            <Link href="/" className="text-slate-100 font-medium hover:text-amber-400 transition-colors cursor-pointer">홈</Link>
+            <Link href="/counseling" className="text-slate-300 hover:text-amber-400 transition-colors cursor-pointer">심리상담</Link>
+            <Link href="/test" className="text-slate-300 hover:text-amber-400 transition-colors cursor-pointer">심리검사</Link>
+            <Link href="/support" className="text-slate-300 hover:text-amber-400 transition-colors cursor-pointer">전국민마음투자지원사업</Link>
+            <Link href="/eap" className="text-slate-300 hover:text-amber-400 transition-colors cursor-pointer">EAP 기업심리상담</Link>
+          </nav>
         </div>
       </header>
 
@@ -411,14 +402,12 @@ export default function Home() {
       {/* Footer */}
       <footer className="bg-gray-900 text-white py-12 px-4 border-t border-slate-800">
         <div className="max-w-7xl mx-auto text-center">
-          <div className="flex items-center justify-center space-x-3 mb-6">
+          <div className="flex items-center justify-center mb-6">
             <img
               src="/20250801_151941.png"
               alt="드림심리상담센터 로고"
-              className="w-10 h-10 rounded-full object-cover shadow-md border border-amber-500"
-              style={{ background: "#fff" }}
+              className="h-12 md:h-14 w-auto block mx-auto"
             />
-            <h3 className="text-2xl font-bold text-slate-100">드림심리상담센터</h3>
           </div>
           <p className="text-slate-400 mb-6 max-w-2xl mx-auto">
             전문적이고 따뜻한 심리상담으로 당신의 마음을 돌봅니다. <br />
@@ -429,7 +418,7 @@ export default function Home() {
             <p>전화: 053-759-1282</p>
           </div>
           <div className="border-t border-slate-800 pt-8">
-            <p className="text-slate-500">&copy; 2024 드림심리상담센터. All rights reserved.</p>
+            <p className="text-slate-500">&copy; 2011 드림심리상담센터. All rights reserved.</p>
           </div>
         </div>
       </footer>
