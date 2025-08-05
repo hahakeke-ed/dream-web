@@ -1,7 +1,7 @@
-
 'use client';
 
 import Link from 'next/link';
+import Image from 'next/image';
 
 export default function Home() {
   return (
@@ -10,9 +10,17 @@ export default function Home() {
       <header className="bg-slate-900 shadow-lg border-b border-slate-700">
         <div className="max-w-7xl mx-auto px-4 py-4">
           <div className="flex justify-between items-center">
+            {/* 로고 이미지 적용 */}
             <div className="flex items-center space-x-3">
-              <div className="w-10 h-10 bg-amber-600 rounded-full flex items-center justify-center">
-                <i className="ri-heart-3-line text-white text-xl"></i>
+              <div className="w-14 h-14 flex items-center justify-center">
+                <Image
+                  src="/dream_logo.png"
+                  alt="드림심리상담센터 로고"
+                  width={56}
+                  height={56}
+                  className="object-contain"
+                  priority
+                />
               </div>
               <div>
                 <h1 className="text-xl font-bold text-slate-100">드림심리상담센터</h1>
@@ -349,7 +357,7 @@ export default function Home() {
                   <h3 className="text-lg font-bold mb-2 text-slate-100">오시는 길</h3>
                   <p className="text-slate-400 text-sm leading-relaxed">
                     대구광역시 수성구 동대구로 346<br />
-                    범 위해서 오피스텔
+                    범어서한포레스트 오피스텔
                   </p>
                 </div>
                 <div>
@@ -375,19 +383,17 @@ export default function Home() {
                 </div>
               </div>
 
-              {/* Naver Map */}
-              <div className="w-full">
+              {/* 약도 이미지로 대체 */}
+              <div className="w-full flex flex-col items-center">
                 <div className="bg-white rounded-xl p-4">
-                  <iframe
-                    src="https://naver.me/5gFZMeYR"
-                    width="100%"
-                    height="300"
-                    style={{border: 0, borderRadius: '8px'}}
-                    allowFullScreen
-                    loading="lazy"
-                    referrerPolicy="no-referrer-when-downgrade"
-                    title="드림심리상담센터 위치"
-                  ></iframe>
+                  <Image
+                    src="/map.png"
+                    alt="드림심리상담센터 약도"
+                    width={320}
+                    height={230}
+                    className="rounded-md shadow max-w-full h-auto border mx-auto"
+                    priority
+                  />
                   <div className="mt-3 text-center">
                     <a
                       href="https://map.naver.com/p/search/%EB%93%9C%EB%A6%BC%EC%8B%AC%EB%A6%AC%EC%83%81%EB%8B%B4%EC%84%BC%ED%84%B0/place/38462793?c=15.00,0,0,0,dh&placePath=/home?entry=bmp"
@@ -405,3 +411,6 @@ export default function Home() {
           </div>
         </div>
       </section>
+    </div>
+  );
+}
