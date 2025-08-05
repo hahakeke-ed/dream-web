@@ -1,4 +1,3 @@
-
 'use client';
 
 import Link from 'next/link';
@@ -11,9 +10,12 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-4 py-4">
           <div className="flex justify-between items-center">
             <div className="flex items-center space-x-3">
-              <div className="w-10 h-10 bg-amber-600 rounded-full flex items-center justify-center">
-                <i className="ri-heart-3-line text-white text-xl"></i>
-              </div>
+              <img
+                src="/20250801_151941.png"
+                alt="드림심리상담센터 로고"
+                className="w-10 h-10 rounded-full object-cover shadow-md border border-amber-500"
+                style={{ background: "#fff" }}
+              />
               <div>
                 <h1 className="text-xl font-bold text-slate-100">드림심리상담센터</h1>
                 <p className="text-sm text-amber-400">전문 심리상담 서비스</p>
@@ -410,9 +412,12 @@ export default function Home() {
       <footer className="bg-gray-900 text-white py-12 px-4 border-t border-slate-800">
         <div className="max-w-7xl mx-auto text-center">
           <div className="flex items-center justify-center space-x-3 mb-6">
-            <div className="w-10 h-10 bg-amber-600 rounded-full flex items-center justify-center">
-              <i className="ri-heart-3-line text-white text-xl"></i>
-            </div>
+            <img
+              src="/20250801_151941.png"
+              alt="드림심리상담센터 로고"
+              className="w-10 h-10 rounded-full object-cover shadow-md border border-amber-500"
+              style={{ background: "#fff" }}
+            />
             <h3 className="text-2xl font-bold text-slate-100">드림심리상담센터</h3>
           </div>
           <p className="text-slate-400 mb-6 max-w-2xl mx-auto">
