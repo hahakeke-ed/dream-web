@@ -305,7 +305,7 @@ export default function Home() {
                 <li>• 학습 문제</li>
                 <li>• 행동 수정</li>
                 <li>• 정서 발달</li>
-                <li>• 또래 관계계</li>
+                <li>• 또래 관계</li>
               </ul>
             </Link>
           </div>
@@ -373,7 +373,7 @@ export default function Home() {
                   <div className="mt-8 pt-8 border-t border-slate-700">
                     <h4 className="text-xl font-semibold text-slate-200 mb-4">이용 방법</h4>
                     <p className="text-slate-400 leading-relaxed mb-4">
-                      학교, 정신보건센터, 청소년상담복지센터, 병의원 의뢰서를 통해 신청하거나 
+                      학교, 정신건강증진센터, 청소년상담복지센터, 병의원 의뢰서를 통해 신청하거나 
                       직접 센터로 문의하시면 자세한 안내를 받으실 수 있습니다.
                     </p>
                     <p className="text-slate-300 font-semibold border border-slate-600 bg-slate-700/50 p-4 rounded-xl">
