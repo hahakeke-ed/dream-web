@@ -584,7 +584,8 @@ export default function Home() {
                 <i className="ri-map-pin-2-line text-white text-2xl"></i>
               </div>
               <h3 className="text-xl font-bold text-slate-100 mb-4">찾아오시는 길</h3>
-              <p className="text-slate-400 mb-4">센터 위치와 교통편指导</p>
+              <p className="text-slate-400 mb-4">대구광역시 수성구 동대구로346 
+범어서한포레스트 오피스텔</p>
               <a 
                 href="https://map.naver.com/v5/search/%EB%93%9C%EB%A6%BC%EC%8B%AC%EB%A6%AC%EC%83%81%EB%8B%B4%EC%84%BC%ED%84%B0" 
                 target="_blank" 
