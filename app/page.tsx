@@ -31,7 +31,7 @@ export default function Home() {
       id: 'national-support',
       name: '전국민마음투자지원사업',
       href: '/national-support',
-      description: '우울, 불안 등 정서적 어려움을 겪는 국민에게 전문적인 심리상담 서비스를 제공하는 정부 사업입니다. 학교나 정신보건센터, 청소년咨询복지센터, 병의원 의뢰서 등을 통해 신청할 수 있습니다.'
+      description: '우울, 불안 등 정서적 어려움을 겪는 국민에게 전문적인 심리상담 서비스를 제공하는 정부 사업입니다. 학교나 정신보건센터, 청소년복지복지센터, 병의원 의뢰서 등을 통해 신청할 수 있습니다.'
     },
     {
       id: 'eap',
@@ -146,7 +146,7 @@ export default function Home() {
                   <i className="ri-user-star-line text-white text-xl"></i>
                 </div>
                 <div className="ml-4">
-                  <h3 className="text-xl font-bold text-slate-100">심리상담 전문가 자격 정보</h3>
+                  <h3 className="text-xl font-bold text-slate-100">심리상담 전문가 자격</h3>
                   <p className="text-slate-400">Korean Psychology Association</p>
                 </div>
               </div>
@@ -316,7 +316,7 @@ export default function Home() {
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-slate-100 mb-4">전국민마음투자지원사업</h2>
-            <p className="text-lg text-slate-400">정부 지원事業으로 부담 없이 전문 심리상담을 받으실 수 있습니다</p>
+            <p className="text-lg text-slate-400">정부 지원사업으로 부담 없이 전문 심리상담을 받으실 수 있습니다</p>
           </div>
 
           <div className="bg-slate-800/50 p-12 rounded-3xl border border-slate-600 backdrop-blur-sm">
@@ -333,7 +333,7 @@ export default function Home() {
                 <div>
                   <h3 className="text-3xl font-bold text-slate-100 mb-6">정부 지원 심리상담 서비스</h3>
                   <p className="text-lg text-slate-300 leading-relaxed mb-8">
-                    드림심리상담센터는 <span className="text-blue-400 font-semibold">전국민마음투자지원事業 수행기관</span>으로 
+                    드림심리상담센터는 <span className="text-blue-400 font-semibold">전국민마음투자지원사업 수행기관</span>으로 
                     지정되어 우울, 불안 등 정서적 어려움을 겪는 국민들에게 전문적인 심리상담 서비스를 제공합니다.
                   </p>
                 </div>
