@@ -31,7 +31,7 @@ export default function Home() {
       id: 'national-support',
       name: '전국민마음투자지원사업',
       href: '/national-support',
-      description: '우울, 불안 等 정서적 어려움을 겪는 국민에게 전문적인 심리상담 서비스를 제공하는 정부 사업입니다. 학교나 정신보건센터, 청소년상담복지센터, 병의원 의뢰서 등을 통해 신청할 수 있습니다.'
+      description: '우울, 불안 등 정서적 어려움을 겪는 국민에게 전문적인 심리상담 서비스를 제공하는 정부 사업입니다. 학교나 정신보건센터, 청소년咨询복지센터, 병의원 의뢰서 등을 통해 신청할 수 있습니다.'
     },
     {
       id: 'eap',
@@ -76,7 +76,7 @@ export default function Home() {
                 className="w-12 h-12 object-cover object-top rounded-lg"
               />
               <div className="flex flex-col">
-                <h1 className="text-2xl font-[\'Pacifico\'] text-amber-400 leading-tight">드림심리상담센터</h1>
+                <h1 className="text-2xl font-[\\\'Pacifico\\\'] text-amber-400 leading-tight">드림심리상담센터</h1>
                 <p className="text-sm text-slate-400 font-medium">전문심리상담기관</p>
               </div>
             </div>
@@ -118,7 +118,7 @@ export default function Home() {
       <section 
         className="relative py-32 px-4 text-white min-h-screen flex items-center bg-cover bg-center"
         style={{
-          backgroundImage: `linear-gradient(rgba(30, 41, 59, 0.7), rgba(30, 41, 59, 0.7)), url('https://readdy.ai/api/search-image?query=Professional%20psychology%20counseling%20center%20interior%20with%20comfortable%20seating%20area%2C%20warm%20lighting%20with%20soft%20neutral%20tones%2C%20therapy%20office%20with%20calming%20ambiance%20for%20mental%20health%20services%2C%20modern%20design%20with%20comfortable%20chairs%20and%20plants%2C%20peaceful%20atmosphere%20with%20warm%20natural%20lighting&width=1200&height=600&seq=main-hero-v25&orientation=landscape')`
+          backgroundImage: `linear-gradient(rgba(30, 41, 59, 0.7), rgba(30, 41, 59, 0.7)), url(\'https://readdy.ai/api/search-image?query=Professional%20psychology%20counseling%20center%20interior%20with%20comfortable%20seating%20area%2C%20warm%20lighting%20with%20soft%20neutral%20tones%2C%20therapy%20office%20with%20calming%20ambiance%20for%20mental%20health%20services%2C%20modern%20design%20with%20comfortable%20chairs%20and%20plants%2C%20peaceful%20atmosphere%20with%20warm%20natural%20lighting&width=1200&height=600&seq=main-hero-v25&orientation=landscape\')`
         }}
       >
         <div className="relative max-w-4xl mx-auto text-center">
@@ -199,7 +199,7 @@ export default function Home() {
                 <div className="w-16 h-16 bg-blue-600 rounded-2xl flex items-center justify-center mx-auto mb-4">
                   <i className="ri-building-line text-white text-2xl"></i>
                 </div>
-                <h3 className="text-xl font-bold text-slate-100 mb-2">(사)한국심리학회의 검증된 전문가</h3>
+                <h3 className="text-xl font-bold text-slate-100 mb-2">한국심리학회의 검증된 전문가</h3>
                 <p className="text-slate-400 text-sm">Professional Association Membership</p>
               </div>
               
@@ -316,7 +316,7 @@ export default function Home() {
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-slate-100 mb-4">전국민마음투자지원사업</h2>
-            <p className="text-lg text-slate-400">정부 지원 사업으로 부담 없이 전문 심리상담을 받으실 수 있습니다</p>
+            <p className="text-lg text-slate-400">정부 지원事業으로 부담 없이 전문 심리상담을 받으실 수 있습니다</p>
           </div>
 
           <div className="bg-slate-800/50 p-12 rounded-3xl border border-slate-600 backdrop-blur-sm">
@@ -324,7 +324,7 @@ export default function Home() {
               <div>
                 <img 
                   src="https://static.readdy.ai/image/7b8785b3350666cb22c8ef9ed87331b2/2cb60c42fc8d3c54ec27f2a879dd86e0.png"
-                  alt="전국민마음투자지원사업 안내"
+                  alt="전국민마음투자지원事業 안내"
                   className="w-full h-auto rounded-2xl object-cover object-top shadow-2xl border border-slate-700"
                 />
               </div>
@@ -333,7 +333,7 @@ export default function Home() {
                 <div>
                   <h3 className="text-3xl font-bold text-slate-100 mb-6">정부 지원 심리상담 서비스</h3>
                   <p className="text-lg text-slate-300 leading-relaxed mb-8">
-                    드림심리상담센터는 <span className="text-blue-400 font-semibold">전국민마음투자지원사업 수행기관</span>으로 
+                    드림심리상담센터는 <span className="text-blue-400 font-semibold">전국민마음투자지원事業 수행기관</span>으로 
                     지정되어 우울, 불안 등 정서적 어려움을 겪는 국민들에게 전문적인 심리상담 서비스를 제공합니다.
                   </p>
                 </div>
@@ -371,10 +371,98 @@ export default function Home() {
 
                   <div className="mt-8 pt-8 border-t border-slate-700">
                     <h4 className="text-xl font-semibold text-slate-200 mb-4">이용 방법</h4>
-                    <p className="text-slate-400 leading-relaxed">
+                    <p className="text-slate-400 leading-relaxed mb-4">
                       학교, 정신보건센터, 청소년상담복지센터, 병의원 의뢰서를 통해 신청하거나 
                       직접 센터로 문의하시면 자세한 안내를 받으실 수 있습니다.
                     </p>
+                    <p className="text-slate-300 font-semibold border border-slate-600 bg-slate-700/50 p-4 rounded-xl">
+                      본 센터는 1급, 2급 유형의 서비스를 제공함
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Mind Magnifier Service Section */}
+      <section className="py-20 px-4 bg-gradient-to-br from-purple-900/20 to-pink-900/30">
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-bold text-slate-100 mb-4">마음돋보기 서비스 실시</h2>
+            <p className="text-lg text-slate-400">임상심리전문가 종합심리검사(Full Battery) 검사 및 해석상담</p>
+          </div>
+
+          <div className="bg-slate-800/50 p-12 rounded-3xl border border-slate-600 backdrop-blur-sm">
+            <div className="grid md:grid-cols-2 gap-12 items-center">
+              <div>
+                <img 
+                  src="https://static.readdy.ai/image/7b8785b3350666cb22c8ef9ed87331b2/94b9cbb5362f130df9e3438a643cfa6c.png"
+                  alt="마음돋보기 서비스 안내"
+                  className="w-full h-auto rounded-2xl object-cover object-top shadow-2xl border border-slate-700"
+                />
+              </div>
+              
+              <div className="space-y-8">
+                <div>
+                  <h3 className="text-3xl font-bold text-slate-100 mb-6">전문 종합심리검사 서비스</h3>
+                  <p className="text-lg text-slate-300 leading-relaxed mb-8">
+                    <span className="text-purple-400 font-semibold">2025년 8월부터</span> 새롭게 종합심리검사를 실시합니다. 
+                    지역대학병원의 임상심리전문가가 직접 종합심리검사(지능, 정서, 심리 요인등)를 시행하고, 
+                    상담심리전문가의 해석 상담이 진행됩니다.
+                  </p>
+                </div>
+
+                <div className="space-y-4">
+                  <div className="flex items-start space-x-4">
+                    <div className="w-8 h-8 bg-purple-600 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                      <i className="ri-brain-line text-white text-sm"></i>
+                    </div>
+                    <div>
+                      <h4 className="text-xl font-semibold text-slate-200 mb-2">종합심리검사 실시</h4>
+                      <p className="text-slate-400">지능, 정서, 심리 요인 등을 종합적으로 평가하는 전문 검사</p>
+                    </div>
+                  </div>
+
+                  <div className="flex items-start space-x-4">
+                    <div className="w-8 h-8 bg-pink-600 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                      <i className="ri-user-star-line text-white text-sm"></i>
+                    </div>
+                    <div>
+                      <h4 className="text-xl font-semibold text-slate-200 mb-2">임상심리전문가 직접 실시</h4>
+                      <p className="text-slate-400">지역대학병원 소속 임상심리전문가가 직접 검사 진행</p>
+                    </div>
+                  </div>
+
+                  <div className="flex items-start space-x-4">
+                    <div className="w-8 h-8 bg-indigo-600 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                      <i className="ri-chat-heart-line text-white text-sm"></i>
+                    </div>
+                    <div>
+                      <h4 className="text-xl font-semibold text-slate-200 mb-2">해석상담 제공</h4>
+                      <p className="text-slate-400">상담심리전문가의 전문적인 해석상담으로 결과 설명</p>
+                    </div>
+                  </div>
+
+                  <div className="mt-8 pt-8 border-t border-slate-700 grid md:grid-cols-2 gap-6">
+                    <div className="bg-slate-700/50 p-6 rounded-xl border border-slate-600">
+                      <h4 className="text-lg font-semibold text-slate-200 mb-3 flex items-center">
+                        <i className="ri-calendar-line text-purple-400 mr-2"></i>
+                        검사 일정
+                      </h4>
+                      <p className="text-slate-300">매주토요일</p>
+                      <p className="text-slate-400 text-sm mt-1">하루 2명만 가능</p>
+                    </div>
+                    
+                    <div className="bg-slate-700/50 p-6 rounded-xl border border-slate-600">
+                      <h4 className="text-lg font-semibold text-slate-200 mb-3 flex items-center">
+                        <i className="ri-time-line text-pink-400 mr-2"></i>
+                        소요 시간
+                      </h4>
+                      <p className="text-slate-300">3~4시간</p>
+                      <p className="text-slate-400 text-sm mt-1">예약 필수</p>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -520,7 +608,7 @@ export default function Home() {
               className="w-10 h-10 object-cover object-top rounded-lg"
             />
             <div className="flex flex-col">
-              <h3 className="text-2xl font-[\'Pacifico\'] text-amber-400 leading-tight">드림심리상담센터</h3>
+              <h3 className="text-2xl font-[\\\'Pacifico\\\'] text-amber-400 leading-tight">드림심리상담센터</h3>
               <p className="text-sm text-slate-400 font-medium">전문심리상담기관</p>
             </div>
           </div>
