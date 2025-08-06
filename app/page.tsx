@@ -31,7 +31,7 @@ export default function Home() {
       id: 'national-support',
       name: '전국민마음투자지원사업',
       href: '/national-support',
-      description: '우울, 불안 등 정서적 어려움을 겪는 국민에게 전문적인 심리상담 서비스를 제공하는 정부 사업입니다. 학교나 정신보건센터, 청소년복지복지센터, 병의원 의뢰서 등을 통해 신청할 수 있습니다.'
+      description: '우울, 불안 등 정서적 어려움을 겪는 국민에게 전문적인 심리상담 서비스를 제공하는 정부 사업입니다. 학교나 정신건강증진센터, 청소년복지상담담센터, 병의원 의뢰서 등을 통해 신청할 수 있습니다.'
     },
     {
       id: 'eap',
@@ -301,10 +301,11 @@ export default function Home() {
                 성장기 아이들의 건강한 발달을 위한 전문 상담
               </p>
               <ul className="text-sm text-slate-500 space-y-2">
-                <li>• 놀이치료</li>
+                <li>• 놀이 치료</li>
                 <li>• 학습 문제</li>
                 <li>• 행동 수정</li>
                 <li>• 정서 발달</li>
+                <li>• 또래 관계계</li>
               </ul>
             </Link>
           </div>
@@ -451,8 +452,8 @@ export default function Home() {
                         <i className="ri-calendar-line text-purple-400 mr-2"></i>
                         검사 일정
                       </h4>
-                      <p className="text-slate-300">매주토요일</p>
-                      <p className="text-slate-400 text-sm mt-1">하루 2명만 가능</p>
+                      <p className="text-slate-300">매주 토요일</p>
+                      <p className="text-slate-400 text-sm mt-1"> 하루 2명만 가능</p>
                     </div>
                     
                     <div className="bg-slate-700/50 p-6 rounded-xl border border-slate-600">
@@ -489,7 +490,7 @@ export default function Home() {
                 <div className="flex-1">
                   <h3 className="text-2xl font-bold text-slate-100 mb-4">서비스 신청</h3>
                   <p className="text-slate-300 mb-6">
-                    현재 1:1 예약서비스이므로 반드시 전화나 카카오톡채널을 통해 예약해야 합니다
+                    1:1 예약 서비스이므로 반드시 전화나 카카오톡채널을 통해 예약해야 합니다
                   </p>
                   <div className="space-y-3">
                     <div className="flex items-center space-x-3">
