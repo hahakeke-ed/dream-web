@@ -10,21 +10,23 @@ export default function IndividualCounseling() {
       <header className="bg-slate-900 shadow-lg border-b border-slate-700">
         <div className="max-w-7xl mx-auto px-4 py-4">
           <div className="flex justify-between items-center">
-            <div className="flex items-center space-x-3">
-              <div className="w-10 h-10 bg-amber-600 rounded-full flex items-center justify-center">
-                <i className="ri-heart-3-line text-white text-xl"></i>
-              </div>
-              <div>
-                <h1 className="text-xl font-bold text-slate-100">드림심리상담센터</h1>
-                <p className="text-sm text-amber-400">전문 심리상담 서비스</p>
+            <div className="flex items-center space-x-4">
+              <img 
+                src="https://readdy.ai/api/search-image?query=professional%20psychology%20counseling%20center%20logo%20with%20brain%20and%20heart%20symbol%2C%20modern%20minimalist%20design%2C%20warm%20colors%20with%20blue%20and%20amber%20accents%2C%20mental%20health%20therapy%20icon%2C%20clean%20geometric%20style&width=60&height=60&seq=header-logo&orientation=squarish" 
+                alt="드림심리상담센터 로고" 
+                className="w-12 h-12 object-cover object-top rounded-lg"
+              />
+              <div className="flex flex-col">
+                <h1 className="text-2xl font-[\'Pacifico\'] text-amber-400 leading-tight">드림심리상담센터</h1>
+                <p className="text-sm text-slate-400 font-medium">전문심리상담기관</p>
               </div>
             </div>
             <nav className="hidden md:flex space-x-8">
               <Link href="/" className="text-slate-300 hover:text-amber-400 transition-colors cursor-pointer">홈</Link>
-              <Link href="/counseling" className="text-slate-100 font-medium hover:text-amber-400 transition-colors cursor-pointer">심리상담</Link>
-              <Link href="/test" className="text-slate-300 hover:text-amber-400 transition-colors cursor-pointer">심리검사</Link>
-              <Link href="/support" className="text-slate-300 hover:text-amber-400 transition-colors cursor-pointer">전국민마음투자지원사업</Link>
-              <Link href="/eap" className="text-slate-300 hover:text-amber-400 transition-colors cursor-pointer">EAP 기업심리상담</Link>
+              <Link href="/individual" className="text-slate-100 font-medium hover:text-amber-400 transition-colors cursor-pointer">개인상담</Link>
+              <Link href="/couple" className="text-slate-300 hover:text-amber-400 transition-colors cursor-pointer">부부상담</Link>
+              <Link href="/family" className="text-slate-300 hover:text-amber-400 transition-colors cursor-pointer">가족상담</Link>
+              <Link href="/child" className="text-slate-300 hover:text-amber-400 transition-colors cursor-pointer">아동청소년</Link>
             </nav>
           </div>
         </div>
@@ -35,14 +37,14 @@ export default function IndividualCounseling() {
         <div className="absolute inset-0 opacity-30">
           <img 
             src="https://readdy.ai/api/search-image?query=Individual%20therapy%20session%20with%20professional%20therapist%20and%20client%20sitting%20in%20comfortable%20chairs%20facing%20each%20other%20in%20modern%20counseling%20office%2C%20calm%20atmosphere%2C%20warm%20lighting%2C%20plants%20and%20books%2C%20professional%20setting%20with%20gentle%20conversation&width=1200&height=600&seq=individual-hero&orientation=landscape" 
-            alt="개인상담" 
+            alt="개인 咨询" 
             className="w-full h-full object-cover object-top"
           />
         </div>
         <div className="relative max-w-4xl mx-auto text-center">
-          <h1 className="text-5xl font-bold mb-6">개인상담</h1>
+          <h1 className="text-5xl font-bold mb-6">개인 咨询</h1>
           <p className="text-xl mb-8 text-slate-300">
-            당신만을 위한 맞춤형 심리상담으로<br />
+            你 seul을 위한 맞춤형 심리상담으로<br />
             마음의 어려움을 함께 해결해나갑니다
           </p>
         </div>
@@ -59,7 +61,7 @@ export default function IndividualCounseling() {
                 <p className="text-lg text-slate-400 mb-6 leading-relaxed">
                   개인상담은 일대일 상담을 통해 개인이 경험하는 심리적, 정서적 어려움을 
                   전문적으로 도와드리는 서비스입니다. 안전하고 따뜻한 상담 공간에서 
-                  자신의 마음을 깊이 탐색하고 건강한 변화를 만들어갑니다.
+                 自己的 마음을 깊이 탐색하고 건강한 변화를 만들어갑니다.
                 </p>
                 <div className="space-y-3">
                   <div className="flex items-center space-x-3">
@@ -202,7 +204,7 @@ export default function IndividualCounseling() {
                 <div className="w-20 h-20 bg-amber-600 rounded-full flex items-center justify-center mx-auto mb-6">
                   <i className="ri-chat-check-line text-white text-2xl"></i>
                 </div>
-                <h3 className="text-lg font-bold text-slate-100 mb-3">1단계: 초기 면담</h3>
+                <h3 className="text-lg font-bold text-slate-100 mb-3">1단계: 초기 면谈</h3>
                 <p className="text-slate-400 text-sm leading-relaxed">
                   현재 상황과 어려움을 파악하고 상담 목표를 함께 설정합니다
                 </p>
@@ -224,7 +226,7 @@ export default function IndividualCounseling() {
                 </div>
                 <h3 className="text-lg font-bold text-slate-100 mb-3">3단계: 해결 작업</h3>
                 <p className="text-slate-400 text-sm leading-relaxed">
-                  맞춤형 상담 기법을 적용하여 구체적인变化 작업을 진행합니다
+                  맞춤형 상담 기법을 적용하여 구체적인變化 작업을 진행합니다
                 </p>
               </div>
 
@@ -248,10 +250,10 @@ export default function IndividualCounseling() {
             </p>
             <div className="flex flex-col md:flex-row gap-4 justify-center">
               <button className="bg-amber-600 text-slate-900 px-8 py-4 rounded-full font-bold text-lg hover:bg-amber-500 transition-colors cursor-pointer whitespace-nowrap">
-                카카오톡 상담 문의
+                카카오채널 예약 예약
               </button>
               <button className="border-2 border-amber-400 text-amber-400 px-8 py-4 rounded-full font-bold text-lg hover:bg-amber-400 hover:text-slate-900 transition-colors cursor-pointer whitespace-nowrap">
-                전화 상담 053-759-1282
+                전화 예약 053-759-1282
               </button>
             </div>
           </div>
@@ -261,11 +263,16 @@ export default function IndividualCounseling() {
       {/* Footer */}
       <footer className="bg-gray-900 text-white py-12 px-4 border-t border-slate-800">
         <div className="max-w-7xl mx-auto text-center">
-          <div className="flex items-center justify-center space-x-3 mb-6">
-            <div className="w-10 h-10 bg-amber-600 rounded-full flex items-center justify-center">
-              <i className="ri-heart-3-line text-white text-xl"></i>
+          <div className="flex items-center justify-center space-x-4 mb-6">
+            <img 
+              src="https://readdy.ai/api/search-image?query=professional%20psychology%20counseling%20center%20logo%20with%20brain%20and%20heart%20symbol%2C%20modern%20minimalist%20design%2C%20warm%20colors%20with%20blue%20and%20amber%20accents%2C%20mental%20health%20therapy%20icon%2C%20clean%20geometric%20style&width=60&height=60&seq=footer-logo&orientation=squarish" 
+              alt="드림심리상담센터 로고" 
+              className="w-10 h-10 object-cover object-top rounded-lg"
+            />
+            <div className="flex flex-col">
+              <h3 className="text-2xl font-[\'Pacifico\'] text-amber-400 leading-tight">드림심리상담센터</h3>
+              <p className="text-sm text-slate-400 font-medium">전문심리상담기관</p>
             </div>
-            <h3 className="text-2xl font-bold text-slate-100">드림심리상담센터</h3>
           </div>
           <p className="text-slate-400 mb-8">전문적이고 따뜻한 심리상담으로 당신의 마음을 돌봅니다.</p>
           <div className="border-t border-slate-800 pt-8">

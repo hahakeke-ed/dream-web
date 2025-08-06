@@ -10,21 +10,23 @@ export default function CoupleCounseling() {
       <header className="bg-slate-900 shadow-lg border-b border-slate-700">
         <div className="max-w-7xl mx-auto px-4 py-4">
           <div className="flex justify-between items-center">
-            <div className="flex items-center space-x-3">
-              <div className="w-10 h-10 bg-amber-600 rounded-full flex items-center justify-center">
-                <i className="ri-heart-3-line text-white text-xl"></i>
-              </div>
-              <div>
-                <h1 className="text-xl font-bold text-slate-100">드림심리상담센터</h1>
-                <p className="text-sm text-amber-400">전문 심리상담 서비스</p>
+            <div className="flex items-center space-x-4">
+              <img 
+                src="https://readdy.ai/api/search-image?query=professional%20psychology%20counseling%20center%20logo%20with%20brain%20and%20heart%20symbol%2C%20modern%20minimalist%20design%2C%20warm%20colors%20with%20blue%20and%20amber%20accents%2C%20mental%20health%20therapy%20icon%2C%20clean%20geometric%20style&width=60&height=60&seq=header-logo&orientation=squarish" 
+                alt="드림심리상담센터 로고" 
+                className="w-12 h-12 object-cover object-top rounded-lg"
+              />
+              <div className="flex flex-col">
+                <h1 className="text-2xl font-[\'Pacifico\'] text-amber-400 leading-tight">드림심리상담센터</h1>
+                <p className="text-sm text-slate-400 font-medium">전문심리상담기관</p>
               </div>
             </div>
             <nav className="hidden md:flex space-x-8">
               <Link href="/" className="text-slate-300 hover:text-amber-400 transition-colors cursor-pointer">홈</Link>
-              <Link href="/counseling" className="text-slate-100 font-medium hover:text-amber-400 transition-colors cursor-pointer">심리상담</Link>
-              <Link href="/test" className="text-slate-300 hover:text-amber-400 transition-colors cursor-pointer">심리검사</Link>
-              <Link href="/support" className="text-slate-300 hover:text-amber-400 transition-colors cursor-pointer">전국민마음투자지원사업</Link>
-              <Link href="/eap" className="text-slate-300 hover:text-amber-400 transition-colors cursor-pointer">EAP 기업심리상담</Link>
+              <Link href="/individual" className="text-slate-300 hover:text-amber-400 transition-colors cursor-pointer">개인상담</Link>
+              <Link href="/couple" className="text-slate-100 font-medium hover:text-amber-400 transition-colors cursor-pointer">부부상담</Link>
+              <Link href="/family" className="text-slate-300 hover:text-amber-400 transition-colors cursor-pointer">가족상담</Link>
+              <Link href="/child" className="text-slate-300 hover:text-amber-400 transition-colors cursor-pointer">아동청소년</Link>
             </nav>
           </div>
         </div>
@@ -251,7 +253,7 @@ export default function CoupleCounseling() {
                     <div className="w-6 h-6 bg-rose-600 rounded-full flex items-center justify-center mt-0.5">
                       <i className="ri-check-line text-white text-sm"></i>
                     </div>
-                    <span className="text-slate-300">갈등 상황에서의 감정 조절 능력 향상</span>
+                    <span className="text-slate-300">갈등 상황에서의 감정 조절能力 향상</span>
                   </li>
                   <li className="flex items-start space-x-3">
                     <div className="w-6 h-6 bg-rose-600 rounded-full flex items-center justify-center mt-0.5">
@@ -263,7 +265,7 @@ export default function CoupleCounseling() {
                     <div className="w-6 h-6 bg-rose-600 rounded-full flex items-center justify-center mt-0.5">
                       <i className="ri-check-line text-white text-sm"></i>
                     </div>
-                    <span className="text-slate-300">효과적인 의사소통 방법 습득</span>
+                    <span className="text-slate-300">有效的な 의사소통 방법 습득</span>
                   </li>
                   <li className="flex items-start space-x-3">
                     <div className="w-6 h-6 bg-rose-600 rounded-full flex items-center justify-center mt-0.5">
@@ -293,13 +295,13 @@ export default function CoupleCounseling() {
                     <div className="w-6 h-6 bg-amber-600 rounded-full flex items-center justify-center mt-0.5">
                       <i className="ri-check-line text-white text-sm"></i>
                     </div>
-                    <span className="text-slate-300">미래 갈등 예방 능력</span>
+                    <span className="text-slate-300">미래 갈등 예방 能力</span>
                   </li>
                   <li className="flex items-start space-x-3">
                     <div className="w-6 h-6 bg-amber-600 rounded-full flex items-center justify-center mt-0.5">
                       <i className="ri-check-line text-white text-sm"></i>
                     </div>
-                    <span className="text-slate-300">가족 전체의 행복감 증진</span>
+                    <span className="text-slate-300">家族 全体の 幸福感 増進</span>
                   </li>
                 </ul>
               </div>
@@ -314,10 +316,10 @@ export default function CoupleCounseling() {
             </p>
             <div className="flex flex-col md:flex-row gap-4 justify-center">
               <button className="bg-rose-600 text-white px-8 py-4 rounded-full font-bold text-lg hover:bg-rose-500 transition-colors cursor-pointer whitespace-nowrap">
-                카카오톡 상담 문의
+                카카오채널 예약 예약
               </button>
               <button className="border-2 border-amber-400 text-amber-400 px-8 py-4 rounded-full font-bold text-lg hover:bg-amber-400 hover:text-slate-900 transition-colors cursor-pointer whitespace-nowrap">
-                전화 상담 053-759-1282
+                전화 예약 053-759-1282
               </button>
             </div>
           </div>
@@ -327,11 +329,16 @@ export default function CoupleCounseling() {
       {/* Footer */}
       <footer className="bg-gray-900 text-white py-12 px-4 border-t border-slate-800">
         <div className="max-w-7xl mx-auto text-center">
-          <div className="flex items-center justify-center space-x-3 mb-6">
-            <div className="w-10 h-10 bg-amber-600 rounded-full flex items-center justify-center">
-              <i className="ri-heart-3-line text-white text-xl"></i>
+          <div className="flex items-center justify-center space-x-4 mb-6">
+            <img 
+              src="https://readdy.ai/api/search-image?query=professional%20psychology%20counseling%20center%20logo%20with%20brain%20and%20heart%20symbol%2C%20modern%20minimalist%20design%2C%20warm%20colors%20with%20blue%20and%20amber%20accents%2C%20mental%20health%20therapy%20icon%2C%20clean%20geometric%20style&width=60&height=60&seq=footer-logo&orientation=squarish" 
+              alt="드림심리상담센터 로고" 
+              className="w-10 h-10 object-cover object-top rounded-lg"
+            />
+            <div className="flex flex-col">
+              <h3 className="text-2xl font-[\'Pacifico\'] text-amber-400 leading-tight">드림심리상담센터</h3>
+              <p className="text-sm text-slate-400 font-medium">전문심리상담기관</p>
             </div>
-            <h3 className="text-2xl font-bold text-slate-100">드림심리상담센터</h3>
           </div>
           <p className="text-slate-400 mb-8">전문적이고 따뜻한 심리상담으로 당신의 마음을 돌봅니다.</p>
           <div className="border-t border-slate-800 pt-8">

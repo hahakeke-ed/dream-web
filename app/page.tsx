@@ -1,252 +1,383 @@
+
 'use client';
 
 import Link from 'next/link';
-import Image from 'next/image';
+import { useState, useRef } from 'react';
 
 export default function Home() {
+  const [activeTooltip, setActiveTooltip] = useState<string | null>(null);
+  const navRef = useRef<HTMLDivElement>(null);
+
+  const menuItems = [
+    {
+      id: 'home',
+      name: '홈',
+      href: '/',
+      description: '드림심리상담센터 메인 페이지입니다. 전체적인 서비스介绍와 상담 프로그램을 확인할 수 있습니다.'
+    },
+    {
+      id: 'counseling',
+      name: '심리상담',
+      href: '/counseling',
+      description: '심리상담전문가(한국심리학회 상담심리사1급)와 1:1 심리상담을 통해 심리적 적응과 성장을 돕습니다.'
+    },
+    {
+      id: 'psychological-test',
+      name: '심리검사',
+      href: '/psychological-test',
+      description: '임상심리전문가(한국심리학회 임상심리사 1급)가 직접 시행하는 종합심리검사(full battery 검사)를 통해 개인의 강점과 특성, 위험요인을 정확히 발견합니다. 임상 장면과 동일한 자격자가 동일한 검사를 시행하며 충분한 해석상담을 받을 수 있습니다.'
+    },
+    {
+      id: 'national-support',
+      name: '전국민마음투자지원사업',
+      href: '/national-support',
+      description: '우울, 불안 等 정서적 어려움을 겪는 국민에게 전문적인 심리상담 서비스를 제공하는 정부 사업입니다. 학교나 정신보건센터, 청소년상담복지센터, 병의원 의뢰서 등을 통해 신청할 수 있습니다.'
+    },
+    {
+      id: 'eap',
+      name: 'EAP 기업심리상담',
+      href: '/eap',
+      description: '본기관과 연계된 기업체 임직원 및 가족에 대한 심리상담 서비스를 제공합니다.'
+    }
+  ];
+
+  const handleMenuClick = (menuId: string, href: string) => {
+    if (menuId === 'home') {
+      window.location.reload();
+      return;
+    }
+
+    if (activeTooltip === menuId) {
+      setActiveTooltip(null);
+    } else {
+      setActiveTooltip(menuId);
+    }
+  };
+
+  const getTooltipArrowPosition = (menuId: string) => {
+    const menuIndex = menuItems.findIndex(item => item.id === menuId);
+    if (menuIndex === -1) return 'left-8';
+
+    // 각 메뉴별로 화살표 위치를 메뉴 글자 중앙으로 정확히 계산
+    const positions = ['left-6', 'left-28', 'left-56', 'left-96', 'left-[140px]'];
+    return positions[menuIndex] || 'left-6';
+  };
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-900 via-slate-800 to-gray-900">
       {/* Header */}
-      <header className="bg-slate-900 shadow-lg border-b border-slate-700">
+      <header className="bg-slate-900 shadow-lg border-b border-slate-700 relative">
         <div className="max-w-7xl mx-auto px-4 py-4">
           <div className="flex justify-between items-center">
-            {/* 로고 이미지 적용 */}
-            <div className="flex items-center space-x-3">
-              <div className="w-14 h-14 flex items-center justify-center">
-                <Image
-                  src="/dream_logo.png"
-                  alt="드림심리상담센터 로고"
-                  width={56}
-                  height={56}
-                  className="object-contain"
-                  priority
-                />
-              </div>
-              <div>
-                <h1 className="text-xl font-bold text-slate-100">드림심리상담센터</h1>
-                <p className="text-sm text-amber-400">전문 심리상담 서비스</p>
+            <div className="flex items-center space-x-4">
+              <img 
+                src="https://readdy.ai/api/search-image?query=professional%20psychology%20counseling%20center%20logo%20with%20brain%20and%20heart%20symbol%2C%20modern%20minimalist%20design%2C%20warm%20colors%20with%20blue%20and%20amber%20accents%2C%20mental%20health%20therapy%20icon%2C%20clean%20geometric%20style&width=60&height=60&seq=header-logo&orientation=squarish" 
+                alt="드림심리상담센터 로고" 
+                className="w-12 h-12 object-cover object-top rounded-lg"
+              />
+              <div className="flex flex-col">
+                <h1 className="text-2xl font-[\'Pacifico\'] text-amber-400 leading-tight">드림심리상담센터</h1>
+                <p className="text-sm text-slate-400 font-medium">전문심리상담기관</p>
               </div>
             </div>
-            <nav className="hidden md:flex space-x-8">
-              <Link href="/" className="text-slate-100 font-medium hover:text-amber-400 transition-colors cursor-pointer">홈</Link>
-              <Link href="/counseling" className="text-slate-300 hover:text-amber-400 transition-colors cursor-pointer">심리상담</Link>
-              <Link href="/test" className="text-slate-300 hover:text-amber-400 transition-colors cursor-pointer">심리검사</Link>
-              <Link href="/support" className="text-slate-300 hover:text-amber-400 transition-colors cursor-pointer">전국민마음투자지원사업</Link>
-              <Link href="/eap" className="text-slate-300 hover:text-amber-400 transition-colors cursor-pointer">EAP 기업심리상담</Link>
+            <nav className="hidden md:flex space-x-8 relative" ref={navRef}>
+              {menuItems.map((item) => (
+                <div key={item.id} className="relative">
+                  <button
+                    onClick={() => handleMenuClick(item.id, item.href)}
+                    className={`${item.id === 'home' ? 'text-slate-100 font-medium' : 'text-slate-300'} hover:text-amber-400 transition-colors cursor-pointer whitespace-nowrap`}
+                  >
+                    {item.name}
+                  </button>
+                </div>
+              ))}
+              {/* Tooltip - positioned relative to entire nav */}
+              {activeTooltip && (
+                <div className="absolute top-full left-0 right-0 mt-3 z-50">
+                  <div className="bg-slate-600/80 backdrop-blur-sm text-white p-6 rounded-2xl shadow-2xl border border-slate-500/50 w-full">
+                    <p className="text-sm leading-relaxed">
+                      {menuItems.find(item => item.id === activeTooltip)?.description}
+                    </p>
+                  </div>
+                </div>
+              )}
             </nav>
           </div>
         </div>
+
+        {/* Overlay to close tooltips */}
+        {activeTooltip && (
+          <div 
+            className="fixed inset-0 z-40" 
+            onClick={() => setActiveTooltip(null)}
+          ></div>
+        )}
       </header>
 
       {/* Hero Section */}
-      <section className="relative py-24 px-4 text-center bg-gradient-to-r from-slate-800 via-gray-800 to-slate-900 text-white overflow-hidden">
-        <div className="absolute inset-0 opacity-20">
-          <img 
-            src="https://readdy.ai/api/search-image?query=Peaceful%20therapy%20office%20environment%2C%20comfortable%20seating%2C%20warm%20lighting%2C%20plants%2C%20and%20calming%20atmosphere%2C%20professional%20counseling%20space%20with%20modern%20interior%20design%2C%20soft%20pastel%20colors%2C%20minimalist%20zen-like%20setting%20with%20natural%20elements&width=1200&height=600&seq=hero-bg&orientation=landscape" 
-            alt="상담 환경" 
-            className="w-full h-full object-cover object-top"
-          />
-        </div>
-        <div className="relative max-w-4xl mx-auto">
-          <h1 className="text-5xl md:text-6xl font-bold mb-6 leading-tight">
-            마음의 치유, <br />
-            <span className="text-amber-400">새로운 시작</span>
-          </h1>
-          <p className="text-xl md:text-2xl mb-8 text-slate-300 leading-relaxed">
-            전문적이고 따뜻한 심리상담으로 <br />
-            당신의 마음을 돌봅니다
+      <section 
+        className="relative py-32 px-4 text-white min-h-screen flex items-center bg-cover bg-center"
+        style={{
+          backgroundImage: `linear-gradient(rgba(30, 41, 59, 0.7), rgba(30, 41, 59, 0.7)), url('https://readdy.ai/api/search-image?query=Professional%20psychology%20counseling%20center%20interior%20with%20comfortable%20seating%20area%2C%20warm%20lighting%20with%20soft%20neutral%20tones%2C%20therapy%20office%20with%20calming%20ambiance%20for%20mental%20health%20services%2C%20modern%20design%20with%20comfortable%20chairs%20and%20plants%2C%20peaceful%20atmosphere%20with%20warm%20natural%20lighting&width=1200&height=600&seq=main-hero-v25&orientation=landscape')`
+        }}
+      >
+        <div className="relative max-w-4xl mx-auto text-center">
+          <h1 className="text-5xl font-bold mb-6">마음을 치유하는 전문기관</h1>
+          <p className="text-xl mb-8 text-slate-200">
+            전문적이고 따뜻한 심리상담으로<br />
+            당신의 마음을 보살펴 드립니다
           </p>
-          <div className="flex flex-col md:flex-row gap-4 justify-center items-center">
-            <button className="bg-amber-600 text-slate-900 px-8 py-4 rounded-full font-bold text-lg hover:bg-amber-500 transition-colors cursor-pointer whitespace-nowrap">
-              상담 문의하기
-            </button>
-            <button className="border-2 border-amber-400 text-amber-400 px-8 py-4 rounded-full font-bold text-lg hover:bg-amber-400 hover:text-slate-900 transition-colors cursor-pointer whitespace-nowrap">
-              서비스 둘러보기
-            </button>
+        </div>
+      </section>
+
+      {/* Professional Features Section */}
+      <section className="py-20 px-4 bg-gradient-to-br from-slate-800 to-gray-800">
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-bold text-slate-100 mb-4">검증된 전문가와 함께 합니다</h2>
+            <p className="text-lg text-slate-400">한국심리학회 전문가 자격을 보유한 상담사가 전문적인 서비스를 제공합니다</p>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-8 mb-16">
+            {/* Professional Info */}
+            <div className="bg-slate-700/50 p-8 rounded-2xl border border-slate-600">
+              <div className="flex items-center mb-6">
+                <div className="w-12 h-12 bg-amber-600 rounded-full flex items-center justify-center">
+                  <i className="ri-user-star-line text-white text-xl"></i>
+                </div>
+                <div className="ml-4">
+                  <h3 className="text-xl font-bold text-slate-100">심리상담 전문가 자격 정보</h3>
+                  <p className="text-slate-400">Korean Psychology Association</p>
+                </div>
+              </div>
+              <div className="space-y-4">
+                <div className="flex items-center space-x-3">
+                  <div className="w-2 h-2 bg-amber-400 rounded-full"></div>
+                  <span className="text-slate-300">한국심리학회 상담심리사 1급, 2급</span>
+                </div>
+                <div className="flex items-center space-x-3">
+                  <div className="w-2 h-2 bg-amber-400 rounded-full"></div>
+                  <span className="text-slate-300">한국심리학회 임상심리사 1급</span>
+                </div>
+                <div className="flex items-center space-x-3">
+                  <div className="w-2 h-2 bg-amber-400 rounded-full"></div>
+                  <span className="text-slate-300">전국민마음투자지원사업 수행기관</span>
+                </div>
+              </div>
+            </div>
+
+            {/* Features */}
+            <div className="bg-slate-700/50 p-8 rounded-2xl border border-slate-600">
+              <div className="flex items-center mb-6">
+                <div className="w-12 h-12 bg-emerald-600 rounded-full flex items-center justify-center">
+                  <i className="ri-shield-check-line text-white text-xl"></i>
+                </div>
+                <div className="ml-4">
+                  <h3 className="text-xl font-bold text-slate-100">특징 및 장점</h3>
+                  <p className="text-slate-400">Professional Counseling Features</p>
+                </div>
+              </div>
+              <div className="space-y-4">
+                <div className="flex items-center space-x-3">
+                  <div className="w-2 h-2 bg-emerald-400 rounded-full"></div>
+                  <span className="text-slate-300">개인별 맞춤형 상담 프로그램</span>
+                </div>
+                <div className="flex items-center space-x-3">
+                  <div className="w-2 h-2 bg-emerald-400 rounded-full"></div>
+                  <span className="text-slate-300">철저한 개인정보 보호</span>
+                </div>
+                <div className="flex items-center space-x-3">
+                  <div className="w-2 h-2 bg-emerald-400 rounded-full"></div>
+                  <span className="text-slate-300">편안하고 안전한 상담 환경</span>
+                </div>
+              </div>
+            </div>
+
+            {/* Association Links */}
+            <div className="bg-gradient-to-br from-blue-600/20 to-indigo-600/20 p-8 rounded-2xl border border-blue-500/30">
+              <div className="text-center mb-6">
+                <div className="w-16 h-16 bg-blue-600 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                  <i className="ri-building-line text-white text-2xl"></i>
+                </div>
+                <h3 className="text-xl font-bold text-slate-100 mb-2">(사)한국심리학회의 검증된 전문가</h3>
+                <p className="text-slate-400 text-sm">Professional Association Membership</p>
+              </div>
+              
+              <div className="text-center mb-6">
+                <p className="text-sm text-slate-300 mb-4">
+                  한국심리학회는 가장 엄격한 자격검증 기준(학위, 임상 수련등)으로 전문성을 확보하고 널리 공인받고 있습니다.<br />
+                  (하단: 지역별 상담심리사 검색 서비스 제공중)
+                </p>
+              </div>
+
+              <div className="space-y-3">
+                <a 
+                  href="https://krcpa.or.kr/user/new/index.asp" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="w-full bg-blue-600 text-white py-3 rounded-xl font-bold text-sm hover:bg-blue-500 transition-colors cursor-pointer flex items-center justify-center whitespace-nowrap"
+                >
+                  <i className="ri-external-link-line mr-2"></i>
+                  한국상담심리학회
+                </a>
+                <a 
+                  href="http://www.kcp.or.kr/" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="w-full bg-emerald-600 text-white py-3 rounded-xl font-bold text-sm hover:bg-emerald-500 transition-colors cursor-pointer flex items-center justify-center whitespace-nowrap"
+                >
+                  <i className="ri-external-link-line mr-2"></i>
+                  한국임상심리학회
+                </a>
+              </div>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* Services Overview */}
-      <section className="py-20 px-4 bg-slate-900">
-        <div className="max-w-7xl mx-auto">
+      {/* Services Section */}
+      <section className="py-20 px-4">
+        <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-slate-100 mb-4">검증된 전문가 집단</h2>
-            <p className="text-lg text-slate-400 max-w-3xl mx-auto">
-              한국심리학회 인증 전문가들이 석박사 학위와 전문 자격증을 바탕으로 최고 수준의 심리상담 서비스를 제공합니다
-            </p>
+            <h2 className="text-4xl font-bold text-slate-100 mb-4">상담 서비스</h2>
+            <p className="text-lg text-slate-400">개인적 필요에 맞는 전문적인 심리상담을 제공합니다</p>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-12 mb-16">
-            {/* Professional Credentials */}
-            <div className="bg-gradient-to-br from-slate-800 to-gray-800 p-8 rounded-2xl border border-slate-700">
-              <div className="w-16 h-16 bg-amber-600 rounded-2xl flex items-center justify-center mb-6">
-                <i className="ri-award-line text-white text-2xl"></i>
-              </div>
-              <h3 className="text-2xl font-bold text-slate-100 mb-4">전문 자격 인증</h3>
-              <div className="space-y-4">
-                <div className="flex items-center space-x-3">
-                  <div className="w-6 h-6 bg-blue-600 rounded-full flex items-center justify-center">
-                    <i className="ri-check-line text-white text-sm"></i>
-                  </div>
-                  <span className="text-slate-300">상담심리사 1급, 2급 자격 소지</span>
-                </div>
-                <div className="flex items-center space-x-3">
-                  <div className="w-6 h-6 bg-blue-600 rounded-full flex items-center justify-center">
-                    <i className="ri-check-line text-white text-sm"></i>
-                  </div>
-                  <span className="text-slate-300">임상심리사 1급 전문가</span>
-                </div>
-                <div className="flex items-center space-x-3">
-                  <div className="w-6 h-6 bg-blue-600 rounded-full flex items-center justify-center">
-                    <i className="ri-check-line text-white text-sm"></i>
-                  </div>
-                  <span className="text-slate-300">한국심리학회 정회원</span>
-                </div>
-                <div className="flex items-center space-x-3">
-                  <div className="w-6 h-6 bg-blue-600 rounded-full flex items-center justify-center">
-                    <i className="ri-check-line text-white text-sm"></i>
-                  </div>
-                  <span className="text-slate-300">지속적인 전문성 개발 교육 이수</span>
-                </div>
-              </div>
-            </div>
-
-            {/* Academic Background */}
-            <div className="bg-gradient-to-br from-slate-800 to-gray-800 p-8 rounded-2xl border border-slate-700">
-              <div className="w-16 h-16 bg-emerald-600 rounded-2xl flex items-center justify-center mb-6">
-                <i className="ri-graduation-cap-line text-white text-2xl"></i>
-              </div>
-              <h3 className="text-2xl font-bold text-slate-100 mb-4">학문적 전문성</h3>
-              <div className="space-y-4">
-                <div className="flex items-center space-x-3">
-                  <div className="w-6 h-6 bg-emerald-600 rounded-full flex items-center justify-center">
-                    <i className="ri-check-line text-white text-sm"></i>
-                  </div>
-                  <span className="text-slate-300">심리학 석사/박사 학위 소지</span>
-                </div>
-                <div className="flex items-center space-x-3">
-                  <div className="w-6 h-6 bg-emerald-600 rounded-full flex items-center justify-center">
-                    <i className="ri-check-line text-white text-sm"></i>
-                  </div>
-                  <span className="text-slate-300">상담심리/임상심리 전공</span>
-                </div>
-                <div className="flex items-center space-x-3">
-                  <div className="w-6 h-6 bg-emerald-600 rounded-full flex items-center justify-center">
-                    <i className="ri-check-line text-white text-sm"></i>
-                  </div>
-                  <span className="text-slate-300">한국심리학회 수련감독 전문가로 구성</span>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          {/* Professional Associations */}
-          <div className="bg-gradient-to-r from-slate-800 via-gray-800 to-slate-800 p-8 rounded-2xl border border-slate-700 mb-16">
-            <div className="text-center mb-8">
-              <h3 className="text-2xl font-bold text-slate-100 mb-4">전문 학회 소속</h3>
-              <p className="text-slate-400">엄격한 심사를 통해 인증받은 전문가들로 구성</p>
-            </div>
-            <div className="grid md:grid-cols-2 gap-8">
-              <a 
-                href="https://krcpa.or.kr/user/new/index.asp"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center justify-center space-x-4 p-6 bg-slate-700 rounded-xl border border-slate-600 hover:bg-slate-600 transition-colors cursor-pointer"
-              >
-                <div className="w-12 h-12 bg-blue-600 rounded-full flex items-center justify-center">
-                  <i className="ri-shield-check-line text-white text-xl"></i>
-                </div>
-                <div>
-                  <h4 className="text-lg font-bold text-slate-100">한국상담심리학회</h4>
-                  <p className="text-sm text-slate-400">상담심리사 자격 검증 기관</p>
-                </div>
-              </a>
-              <a 
-                href="https://www.kcp.or.kr/new/intro.asp"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center justify-center space-x-4 p-6 bg-slate-700 rounded-xl border border-slate-600 hover:bg-slate-600 transition-colors cursor-pointer"
-              >
-                <div className="w-12 h-12 bg-rose-600 rounded-full flex items-center justify-center">
-                  <i className="ri-shield-check-line text-white text-xl"></i>
-                </div>
-                <div>
-                  <h4 className="text-lg font-bold text-slate-100">한국임상심리학회</h4>
-                  <p className="text-sm text-slate-400">임상심리사 자격 검증 기관</p>
-                </div>
-              </a>
-            </div>
-          </div>
-
-          {/* Service Areas */}
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {/* Individual Counseling */}
-            <div className="bg-gradient-to-br from-slate-800 to-gray-800 p-8 rounded-2xl hover:shadow-lg border border-slate-700 transition-all cursor-pointer group">
-              <div className="w-16 h-16 bg-blue-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+            <Link href="/individual" className="bg-slate-800 p-8 rounded-2xl border border-slate-600 hover:border-amber-500 transition-all group cursor-pointer">
+              <div className="w-16 h-16 bg-amber-600 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-amber-500 transition-colors">
                 <i className="ri-user-3-line text-white text-2xl"></i>
               </div>
-              <h3 className="text-xl font-bold text-slate-100 mb-3">개인상담</h3>
-              <div className="text-xs text-amber-400 mb-3 font-semibold">
-                상담심리사 • 임상심리사
-              </div>
-              <ul className="text-sm text-slate-400 space-y-1">
-                <li>• 우울/불안 상담</li>
+              <h3 className="text-xl font-bold text-slate-100 mb-4">개인상담</h3>
+              <p className="text-slate-400 mb-4">
+                개인적인 고민과 심리적 어려움을 전문적으로 상담합니다
+              </p>
+              <ul className="text-sm text-slate-500 space-y-2">
+                <li>• 우울, 불안 상담</li>
                 <li>• 스트레스 관리</li>
                 <li>• 자존감 향상</li>
                 <li>• 대인관계 개선</li>
               </ul>
-            </div>
+            </Link>
 
-            {/* Couple Counseling */}
-            <div className="bg-gradient-to-br from-slate-800 to-gray-800 p-8 rounded-2xl hover:shadow-lg border border-slate-700 transition-all cursor-pointer group">
-              <div className="w-16 h-16 bg-rose-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+            <Link href="/couple" className="bg-slate-800 p-8 rounded-2xl border border-slate-600 hover:border-rose-500 transition-all group cursor-pointer">
+              <div className="w-16 h-16 bg-rose-600 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-rose-500 transition-colors">
                 <i className="ri-heart-2-line text-white text-2xl"></i>
               </div>
-              <h3 className="text-xl font-bold text-slate-100 mb-3">부부상담</h3>
-              <div className="text-xs text-amber-400 mb-3 font-semibold">
-                가족상담 전문가
-              </div>
-              <ul className="text-sm text-slate-400 space-y-1">
+              <h3 className="text-xl font-bold text-slate-100 mb-4">부부상담</h3>
+              <p className="text-slate-400 mb-4">
+                더 건강하고 행복한 부부 관계를 위한 전문 상담입니다
+              </p>
+              <ul className="text-sm text-slate-500 space-y-2">
                 <li>• 의사소통 개선</li>
                 <li>• 갈등 해결</li>
                 <li>• 친밀감 회복</li>
                 <li>• 신뢰 구축</li>
               </ul>
-            </div>
+            </Link>
 
-            {/* Family Counseling */}
-            <div className="bg-gradient-to-br from-slate-800 to-gray-800 p-8 rounded-2xl hover:shadow-lg border border-slate-700 transition-all cursor-pointer group">
-              <div className="w-16 h-16 bg-emerald-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-                <i className="ri-group-line text-white text-2xl"></i>
+            <Link href="/family" className="bg-slate-800 p-8 rounded-2xl border border-slate-600 hover:border-emerald-500 transition-all group cursor-pointer">
+              <div className="w-16 h-16 bg-emerald-600 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-emerald-500 transition-colors">
+                <i className="ri-group-2-line text-white text-2xl"></i>
               </div>
-              <h3 className="text-xl font-bold text-slate-100 mb-3">가족상담</h3>
-              <div className="text-xs text-amber-400 mb-3 font-semibold">
-                가족치료 전문가
-              </div>
-              <ul className="text-sm text-slate-400 space-y-1">
-                <li>• 가족 갈등 중재</li>
+              <h3 className="text-xl font-bold text-slate-100 mb-4">가족상담</h3>
+              <p className="text-slate-400 mb-4">
+                화목한 가정을 위한 가족 구성원 간의 관계 개선 상담
+              </p>
+              <ul className="text-sm text-slate-500 space-y-2">
+                <li>• 가족 갈등 해결</li>
                 <li>• 세대 간 소통</li>
-                <li>• 역할 재정립</li>
+                <li>• 자녀 양육 상담</li>
                 <li>• 가족 유대감 강화</li>
               </ul>
-            </div>
+            </Link>
 
-            {/* Child/Adolescent Counseling */}
-            <div className="bg-gradient-to-br from-slate-800 to-gray-800 p-8 rounded-2xl hover:shadow-lg border border-slate-700 transition-all cursor-pointer group">
-              <div className="w-16 h-16 bg-violet-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-                <i className="ri-bear-smile-line text-white text-2xl"></i>
+            <Link href="/child" className="bg-slate-800 p-8 rounded-2xl border border-slate-600 hover:border-purple-500 transition-all group cursor-pointer">
+              <div className="w-16 h-16 bg-purple-600 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-purple-500 transition-colors">
+                <i className="ri-user-star-line text-white text-2xl"></i>
               </div>
-              <h3 className="text-xl font-bold text-slate-100 mb-3">아동/청소년상담</h3>
-              <div className="text-xs text-amber-400 mb-3 font-semibold">
-                아동청소년 전문가
-              </div>
-              <ul className="text-sm text-slate-400 space-y-1">
-                <li>• 학습/학교 적응</li>
-                <li>• 또래 관계</li>
-                <li>• 정서 조절</li>
-                <li>• 행동 문제</li>
+              <h3 className="text-xl font-bold text-slate-100 mb-4">아동/청소년상담</h3>
+              <p className="text-slate-400 mb-4">
+                성장기 아이들의 건강한 발달을 위한 전문 상담
+              </p>
+              <ul className="text-sm text-slate-500 space-y-2">
+                <li>• 놀이치료</li>
+                <li>• 학습 문제</li>
+                <li>• 행동 수정</li>
+                <li>• 정서 발달</li>
               </ul>
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* National Mind Investment Support Program Section */}
+      <section className="py-20 px-4 bg-gradient-to-br from-blue-900/20 to-indigo-900/30">
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-bold text-slate-100 mb-4">전국민마음투자지원사업</h2>
+            <p className="text-lg text-slate-400">정부 지원 사업으로 부담 없이 전문 심리상담을 받으실 수 있습니다</p>
+          </div>
+
+          <div className="bg-slate-800/50 p-12 rounded-3xl border border-slate-600 backdrop-blur-sm">
+            <div className="grid md:grid-cols-2 gap-12 items-center">
+              <div>
+                <img 
+                  src="https://static.readdy.ai/image/7b8785b3350666cb22c8ef9ed87331b2/2cb60c42fc8d3c54ec27f2a879dd86e0.png"
+                  alt="전국민마음투자지원사업 안내"
+                  className="w-full h-auto rounded-2xl object-cover object-top shadow-2xl border border-slate-700"
+                />
+              </div>
+              
+              <div className="space-y-8">
+                <div>
+                  <h3 className="text-3xl font-bold text-slate-100 mb-6">정부 지원 심리상담 서비스</h3>
+                  <p className="text-lg text-slate-300 leading-relaxed mb-8">
+                    드림심리상담센터는 <span className="text-blue-400 font-semibold">전국민마음투자지원사업 수행기관</span>으로 
+                    지정되어 우울, 불안 등 정서적 어려움을 겪는 국민들에게 전문적인 심리상담 서비스를 제공합니다.
+                  </p>
+                </div>
+
+                <div className="space-y-4">
+                  <div className="flex items-start space-x-4">
+                    <div className="w-8 h-8 bg-blue-600 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                      <i className="ri-government-line text-white text-sm"></i>
+                    </div>
+                    <div>
+                      <h4 className="text-xl font-semibold text-slate-200 mb-2">정부 지원 프로그램</h4>
+                      <p className="text-slate-400">보건복지부와 한국사회복지공단에서 운영하는 공식 사업</p>
+                    </div>
+                  </div>
+
+                  <div className="flex items-start space-x-4">
+                    <div className="w-8 h-8 bg-emerald-600 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                      <i className="ri-shield-check-line text-white text-sm"></i>
+                    </div>
+                    <div>
+                      <h4 className="text-xl font-semibold text-slate-200 mb-2">전문가 자격 보장</h4>
+                      <p className="text-slate-400">한국심리학회 자격을 보유한 상담심리사가 직접 상담</p>
+                    </div>
+                  </div>
+
+                  <div className="flex items-start space-x-4">
+                    <div className="w-8 h-8 bg-amber-600 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                      <i className="ri-price-tag-3-line text-white text-sm"></i>
+                    </div>
+                    <div>
+                      <h4 className="text-xl font-semibold text-slate-200 mb-2">경제적 부담 완화</h4>
+                      <p className="text-slate-400">정부 지원을 통해 합리적인 비용으로 전문 상담 이용 가능</p>
+                    </div>
+                  </div>
+
+                  <div className="mt-8 pt-8 border-t border-slate-700">
+                    <h4 className="text-xl font-semibold text-slate-200 mb-4">이용 방법</h4>
+                    <p className="text-slate-400 leading-relaxed">
+                      학교, 정신보건센터, 청소년상담복지센터, 병의원 의뢰서를 통해 신청하거나 
+                      직접 센터로 문의하시면 자세한 안내를 받으실 수 있습니다.
+                    </p>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -256,161 +387,149 @@ export default function Home() {
       <section className="py-20 px-4 bg-gradient-to-br from-gray-900 to-slate-900">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-slate-100 mb-4">상담 진행 과정</h2>
-            <p className="text-lg text-slate-400">체계적이고 전문적인 상담 프로세스를 따릅니다</p>
+            <h2 className="text-4xl font-bold text-slate-100 mb-4">서비스 이용절차</h2>
+            <p className="text-lg text-slate-400">1:1 예약서비스로 체계적이고 전문적인 상담을 제공합니다</p>
           </div>
 
-          <div className="grid md:grid-cols-4 gap-8">
-            <div className="text-center group">
-              <div className="relative">
-                <div className="w-20 h-20 bg-amber-600 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform">
+          <div className="grid md:grid-cols-2 gap-12">
+            {/* Step 1: Service Application */}
+            <div className="bg-gradient-to-br from-slate-800 to-gray-800 p-8 rounded-2xl border border-slate-700">
+              <div className="flex items-center space-x-6">
+                <div className="w-16 h-16 bg-amber-600 rounded-full flex items-center justify-center flex-shrink-0">
                   <span className="text-white text-2xl font-bold">1</span>
                 </div>
-                <div className="hidden md:block absolute top-10 left-20 w-32 h-0.5 bg-slate-600"></div>
+                <div className="flex-1">
+                  <h3 className="text-2xl font-bold text-slate-100 mb-4">서비스 신청</h3>
+                  <p className="text-slate-300 mb-6">
+                    현재 1:1 예약서비스이므로 반드시 전화나 카카오톡채널을 통해 예약해야 합니다
+                  </p>
+                  <div className="space-y-3">
+                    <div className="flex items-center space-x-3">
+                      <div className="w-6 h-6 bg-amber-600 rounded-full flex items-center justify-center">
+                        <i className="ri-phone-line text-white text-sm"></i>
+                      </div>
+                      <span className="text-slate-300">전화 예약: 053-759-1282</span>
+                    </div>
+                    <div className="flex items-center space-x-3">
+                      <div className="w-6 h-6 bg-amber-600 rounded-full flex items-center justify-center">
+                        <i className="ri-chat-3-line text-white text-sm"></i>
+                      </div>
+                      <span className="text-slate-300">카카오톡: @드림심리상담센터</span>
+                    </div>
+                  </div>
+                </div>
               </div>
-              <h3 className="text-xl font-bold text-slate-100 mb-2">초기 상담</h3>
-              <p className="text-slate-400">문제 파악 및 상담 목표 설정</p>
             </div>
 
-            <div className="text-center group">
-              <div className="relative">
-                <div className="w-20 h-20 bg-amber-600 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform">
+            {/* Step 2: Service Utilization */}
+            <div className="bg-gradient-to-br from-slate-800 to-gray-800 p-8 rounded-2xl border border-slate-700">
+              <div className="flex items-center space-x-6">
+                <div className="w-16 h-16 bg-emerald-600 rounded-full flex items-center justify-center flex-shrink-0">
                   <span className="text-white text-2xl font-bold">2</span>
                 </div>
-                <div className="hidden md:block absolute top-10 left-20 w-32 h-0.5 bg-slate-600"></div>
-              </div>
-              <h3 className="text-xl font-bold text-slate-100 mb-2">심층 분석</h3>
-              <p className="text-slate-400">전문적 평가 및 상담 계획 수립</p>
-            </div>
-
-            <div className="text-center group">
-              <div className="relative">
-                <div className="w-20 h-20 bg-amber-600 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform">
-                  <span className="text-white text-2xl font-bold">3</span>
+                <div className="flex-1">
+                  <h3 className="text-2xl font-bold text-slate-100 mb-4">서비스 이용</h3>
+                  <p className="text-slate-300 mb-6">
+                    상담 유형에 따라 소요시간이 다릅니다
+                  </p>
+                  <div className="space-y-3">
+                    <div className="flex items-start space-x-3">
+                      <div className="w-6 h-6 bg-emerald-600 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
+                        <i className="ri-user-3-line text-white text-sm"></i>
+                      </div>
+                      <div>
+                        <span className="text-slate-300 font-medium">개인상담</span>
+                        <p className="text-slate-400 text-sm">50분 기준</p>
+                      </div>
+                    </div>
+                    <div className="flex items-start space-x-3">
+                      <div className="w-6 h-6 bg-emerald-600 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
+                        <i className="ri-group-line text-white text-sm"></i>
+                      </div>
+                      <div>
+                        <span className="text-slate-300 font-medium">부부상담, 가족상담</span>
+                        <p className="text-slate-400 text-sm">90분 기준</p>
+                      </div>
+                    </div>
+                    <div className="flex items-start space-x-3">
+                      <div className="w-6 h-6 bg-emerald-600 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
+                        <i className="ri-clipboard-line text-white text-sm"></i>
+                      </div>
+                      <div>
+                        <span className="text-slate-300 font-medium">종합심리검사 (Full Battery)</span>
+                        <p className="text-slate-400 text-sm">임상심리전문가 실시, 3~4시간 소요</p>
+                      </div>
+                    </div>
+                  </div>
                 </div>
-                <div className="hidden md:block absolute top-10 left-20 w-32 h-0.5 bg-slate-600"></div>
               </div>
-              <h3 className="text-xl font-bold text-slate-100 mb-2">집중 상담</h3>
-              <p className="text-slate-400">맞춤형 상담 기법 적용</p>
-            </div>
-
-            <div className="text-center group">
-              <div className="w-20 h-20 bg-amber-600 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform">
-                <span className="text-white text-2xl font-bold">4</span>
-              </div>
-              <h3 className="text-xl font-bold text-slate-100 mb-2">효과 평가</h3>
-              <p className="text-slate-400">상담 성과 점검 및 지속 관리</p>
             </div>
           </div>
         </div>
       </section>
 
       {/* Contact Section */}
-      <section className="py-20 px-4 bg-slate-800 text-white">
-        <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-4xl font-bold mb-6">상담 문의 및 예약</h2>
-          <p className="text-xl mb-12 text-slate-300">
-            전문 상담사와 함께 마음의 치유 여정을 시작해보세요
-          </p>
-
-          <div className="grid md:grid-cols-2 gap-12">
-            {/* KakaoTalk */}
-            <div className="bg-amber-500 text-gray-900 p-8 rounded-2xl">
-              <div className="w-16 h-16 bg-amber-600 rounded-full flex items-center justify-center mx-auto mb-6">
-                <i className="ri-chat-3-line text-white text-2xl"></i>
-              </div>
-              <h3 className="text-2xl font-bold mb-4">카카오톡 상담</h3>
-              <p className="mb-6 text-gray-800">
-                24시간 언제든지 편리하게 <br />
-                상담 문의 및 예약을 하실 수 있습니다
-              </p>
-              <button className="bg-gray-900 text-white px-8 py-3 rounded-full font-bold hover:bg-gray-800 transition-colors cursor-pointer whitespace-nowrap">
-                @드림심리상담센터
-              </button>
-            </div>
-
-            {/* Phone */}
-            <div className="bg-slate-700 text-white p-8 rounded-2xl border border-slate-600">
-              <div className="w-16 h-16 bg-slate-600 rounded-full flex items-center justify-center mx-auto mb-6">
+      <section className="py-20 px-4">
+        <div className="max-w-6xl mx-auto text-center">
+          <h2 className="text-3xl font-bold text-slate-100 mb-8">상담 예약</h2>
+          <div className="grid md:grid-cols-3 gap-8">
+            <div className="bg-slate-800 p-8 rounded-2xl border border-slate-600">
+              <div className="w-16 h-16 bg-amber-600 rounded-2xl flex items-center justify-center mx-auto mb-6">
                 <i className="ri-phone-line text-white text-2xl"></i>
               </div>
-              <h3 className="text-2xl font-bold mb-4 text-slate-100">전화 상담</h3>
-              <p className="mb-6 text-slate-300">
-                직접 통화를 통해 <br />
-                상세한 상담 안내를 받으실 수 있습니다
-              </p>
-              <button className="bg-amber-600 text-white px-8 py-3 rounded-full font-bold hover:bg-amber-700 transition-colors cursor-pointer whitespace-nowrap">
-                053-759-1282
-              </button>
+              <h3 className="text-xl font-bold text-slate-100 mb-4">전화 예약</h3>
+              <p className="text-slate-400 mb-4">직접 전화를 통한 상담 예약 및 문의</p>
+              <p className="text-2xl font-bold text-amber-400">053-759-1282</p>
             </div>
-          </div>
 
-          {/* Location Info */}
-          <div className="mt-12 p-8 bg-slate-900 rounded-xl border border-slate-700">
-            <div className="grid lg:grid-cols-2 gap-8 items-center">
-              {/* Location Details */}
-              <div className="grid md:grid-cols-3 gap-6 text-center md:text-left">
-                <div>
-                  <div className="w-12 h-12 bg-amber-600 rounded-full flex items-center justify-center mx-auto md:mx-0 mb-3">
-                    <i className="ri-map-pin-line text-white text-xl"></i>
-                  </div>
-                  <h3 className="text-lg font-bold mb-2 text-slate-100">오시는 길</h3>
-                  <p className="text-slate-400 text-sm leading-relaxed">
-                    대구광역시 수성구 동대구로 346<br />
-                    범어서한포레스트 오피스텔
-                  </p>
-                </div>
-                <div>
-                  <div className="w-12 h-12 bg-amber-600 rounded-full flex items-center justify-center mx-auto md:mx-0 mb-3">
-                    <i className="ri-time-line text-white text-xl"></i>
-                  </div>
-                  <h3 className="text-lg font-bold mb-2 text-slate-100">운영 시간</h3>
-                  <p className="text-slate-400 text-sm">
-                    평일 09:00 - 18:00<br />
-                    토요일 09:00 - 13:00<br />
-                    일요일/공휴일 휴무
-                  </p>
-                </div>
-                <div>
-                  <div className="w-12 h-12 bg-amber-600 rounded-full flex items-center justify-center mx-auto md:mx-0 mb-3">
-                    <i className="ri-heart-pulse-line text-white text-xl"></i>
-                  </div>
-                  <h3 className="text-lg font-bold mb-2 text-slate-100">응급 상담</h3>
-                  <p className="text-slate-400 text-sm">
-                    위기 상황 시<br />
-                    24시간 긴급 상담 가능
-                  </p>
-                </div>
+            <div className="bg-slate-800 p-8 rounded-2xl border border-slate-600">
+              <div className="w-16 h-16 bg-emerald-600 rounded-2xl flex items-center justify-center mx-auto mb-6">
+                <i className="ri-chat-3-line text-white text-2xl"></i>
               </div>
+              <h3 className="text-xl font-bold text-slate-100 mb-4">카카오채널 예약</h3>
+              <p className="text-slate-400 mb-4">카카오톡을 통한 편리한 상담 예약</p>
+              <p className="text-xl font-bold text-emerald-400">@드림심리상담센터</p>
+            </div>
 
-              {/* 약도 이미지로 대체 */}
-              <div className="w-full flex flex-col items-center">
-                <div className="bg-white rounded-xl p-4">
-                  <Image
-                    src="/map.png"
-                    alt="드림심리상담센터 약도"
-                    width={320}
-                    height={230}
-                    className="rounded-md shadow max-w-full h-auto border mx-auto"
-                    priority
-                  />
-                  <div className="mt-3 text-center">
-                    <a
-                      href="https://map.naver.com/p/search/%EB%93%9C%EB%A6%BC%EC%8B%AC%EB%A6%AC%EC%83%81%EB%8B%B4%EC%84%BC%ED%84%B0/place/38462793?c=15.00,0,0,0,dh&placePath=/home?entry=bmp"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center space-x-2 text-amber-600 hover:text-amber-800 font-medium cursor-pointer"
-                    >
-                      <i className="ri-external-link-line text-lg"></i>
-                      <span>네이버지도에서 크게 보기</span>
-                    </a>
-                  </div>
-                </div>
+            <div className="bg-slate-800 p-8 rounded-2xl border border-slate-600">
+              <div className="w-16 h-16 bg-blue-600 rounded-2xl flex items-center justify-center mx-auto mb-6">
+                <i className="ri-map-pin-2-line text-white text-2xl"></i>
               </div>
+              <h3 className="text-xl font-bold text-slate-100 mb-4">찾아오시는 길</h3>
+              <p className="text-slate-400 mb-4">센터 위치와 교통편指导</p>
+              <a 
+                href="https://map.naver.com/v5/search/%EB%93%9C%EB%A6%BC%EC%8B%AC%EB%A6%AC%EC%83%81%EB%8B%B4%EC%84%BC%ED%84%B0" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="inline-block bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-500 transition-colors cursor-pointer whitespace-nowrap"
+              >
+                네이버 지도 보기
+              </a>
             </div>
           </div>
         </div>
       </section>
+
+      {/* Footer */}
+      <footer className="bg-gray-900 text-white py-12 px-4 border-t border-slate-800">
+        <div className="max-w-7xl mx-auto text-center">
+          <div className="flex items-center justify-center space-x-4 mb-6">
+            <img 
+              src="https://readdy.ai/api/search-image?query=professional%20psychology%20counseling%20center%20logo%20with%20brain%20and%20heart%20symbol%2C%20modern%20minimalist%20design%2C%20warm%20colors%20with%20blue%20and%20amber%20accents%2C%20mental%20health%20therapy%20icon%2C%20clean%20geometric%20style&width=60&height=60&seq=footer-logo&orientation=squarish" 
+              alt="드림심리상담센터 로고" 
+              className="w-10 h-10 object-cover object-top rounded-lg"
+            />
+            <div className="flex flex-col">
+              <h3 className="text-2xl font-[\'Pacifico\'] text-amber-400 leading-tight">드림심리상담센터</h3>
+              <p className="text-sm text-slate-400 font-medium">전문심리상담기관</p>
+            </div>
+          </div>
+          <p className="text-slate-400 mb-8">전문적이고 따뜻한 심리상담으로 당신의 마음을 돌봅니다.</p>
+          <div className="border-t border-slate-800 pt-8">
+            <p className="text-slate-500">&copy; 2024 드림심리상담센터. All rights reserved.</p>
+          </div>
+        </div>
+      </footer>
     </div>
   );
 }
