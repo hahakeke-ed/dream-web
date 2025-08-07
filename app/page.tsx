@@ -31,7 +31,7 @@ export default function Home() {
       id: 'national-support',
       name: '전국민마음투자지원사업',
       href: '/national-support',
-      description: '우울, 불안 등 정서적 어려움을 겪는 국민들에게 전문적인 심리상담 서비스를 제공하는 정부 사업입니다. 학교나 정신건강증진센터, 청소년상담복지센터, 병의원 의뢰서 등을 통해 신청할 수 있습니다.'
+      description: '우울, 불안 등 정서적 어려움을 겪는 국민들에게 전문적인 심리상담 서비스를 제공하는 정부 사업입니다. 학교나 정신건강복지센터, 청소년상담복지센터, 병의원 의뢰서 등을 통해신청할 수 있습니다.'
     },
     {
       id: 'eap',
@@ -76,7 +76,7 @@ export default function Home() {
                 className="w-12 h-12 object-cover object-top rounded-lg"
               />
               <div className="flex flex-col">
-                <h1 className="text-2xl font-[\\\'Pacifico\\\'] text-amber-400 leading-tight">드림심리상담센터</h1>
+                <h1 className="text-2xl font-[\'Pacifico\'] text-amber-400 leading-tight">드림심리상담센터</h1>
                 <p className="text-sm text-slate-400 font-medium">전문심리상담기관</p>
               </div>
             </div>
@@ -118,7 +118,7 @@ export default function Home() {
       <section 
         className="relative py-32 px-4 text-white min-h-screen flex items-center"
         style={{
-          backgroundImage: `linear-gradient(rgba(30, 41, 59, 0.7), rgba(30, 41, 59, 0.7)), url('https://readdy.ai/api/search-image?query=Professional%20psychology%20counseling%20center%20interior%20with%20comfortable%20seating%20area%2C%20warm%20lighting%20with%20soft%20neutral%20tones%2C%20therapy%20office%20with%20calming%20ambiance%20for%20mental%20health%20services%2C%20modern%20design%20with%20comfortable%20chairs%20and%20plants%2C%20peaceful%20atmosphere%20with%20warm%20natural%20lighting&width=1200&height=600&seq=main-hero-v25&orientation=landscape')`,
+          backgroundImage: `linear-gradient(rgba(30, 41, 59, 0.7), rgba(30, 41, 59, 0.7)), url('https://readdy.ai/api/search-image?query=Professional%20psychology%20counseling%20center%20interior%20with%20comfortable%20seating%20area%2C%20warm%20lighting%20with%20soft%20neutral%20tones%2C%20therapy%20office%20with%20calming%20ambiance%20for%20mental%20health%20services%2C%20modern%20design%20with%20comfortable%20chairs%20and%20plants%2C%20peaceful%20atmosphere%20with%20warm%20natural%20lighting&width=1200&height=600&seq=main-hero-v26&orientation=landscape')`,
           backgroundSize: 'cover',
           backgroundPosition: 'center',
           backgroundRepeat: 'no-repeat'
@@ -164,7 +164,7 @@ export default function Home() {
                 </div>
                 <div className="flex items-center space-x-3">
                   <div className="w-2 h-2 bg-amber-400 rounded-full"></div>
-                  <span className="text-slate-300">전국민마음투자지원사업 수행기관</span>
+                  <span className="text-slate-300">보건복지부 정신건강임상심리사 1급</span>
                 </div>
               </div>
             </div>
@@ -176,7 +176,7 @@ export default function Home() {
                   <i className="ri-shield-check-line text-white text-xl"></i>
                 </div>
                 <div className="ml-4">
-                  <h3 className="text-xl font-bold text-slate-100">특징 및 장점</h3>
+                  <h3 className="text-xl font-bold text-slate-100"> 특징 및 장점</h3>
                   <p className="text-slate-400">Professional Counseling Features</p>
                 </div>
               </div>
@@ -205,7 +205,6 @@ export default function Home() {
                 <h3 className="text-xl font-bold text-slate-100 mb-2">한국심리학회의 검증된 전문가</h3>
                 <p className="text-slate-400 text-sm">Professional Association Membership</p>
               </div>
-              
               <div className="text-center mb-6">
                 <p className="text-sm text-slate-300 mb-4">
                   한국심리학회는 가장 엄격한 자격검증 기준(학위, 임상 수련등)으로 전문성을 확보하고 널리 공인받고 있습니다.<br />
@@ -288,7 +287,7 @@ export default function Home() {
                 화목한 가정을 위한 가족 구성원 간의 관계 개선 상담
               </p>
               <ul className="text-sm text-slate-500 space-y-2">
-                <li>• 가족 갈등 해결</li>
+                <li>• 가족 갈등 </li>
                 <li>• 세대 간 소통</li>
                 <li>• 자녀 양육 상담</li>
                 <li>• 가족 유대감 강화</li>
@@ -319,7 +318,7 @@ export default function Home() {
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-slate-100 mb-4">전국민마음투자지원사업</h2>
-            <p className="text-lg text-slate-400">정부 지원 사업으로 부담없이 전문 심리상담을 받으실 수 있습니다</p>
+            <p className="text-lg text-slate-400">-정부 지원 사업으로 부담없이 전문 심리상담을 받으실 수 있습니다</p>
           </div>
 
           <div className="bg-slate-800/50 p-12 rounded-3xl border border-slate-600 backdrop-blur-sm">
@@ -327,11 +326,10 @@ export default function Home() {
               <div>
                 <img 
                   src="https://static.readdy.ai/image/7b8785b3350666cb22c8ef9ed87331b2/2cb60c42fc8d3c54ec27f2a879dd86e0.png"
-                  alt="전국민마음투자지원사업 안내"
+                  alt="전국민마음투자支持사업 안내"
                   className="w-full h-auto rounded-2xl object-cover object-top shadow-2xl border border-slate-700"
                 />
               </div>
-              
               <div className="space-y-8">
                 <div>
                   <h3 className="text-3xl font-bold text-slate-100 mb-6">정부 지원 심리상담 서비스</h3>
@@ -348,7 +346,7 @@ export default function Home() {
                     </div>
                     <div>
                       <h4 className="text-xl font-semibold text-slate-200 mb-2">정부 지원 프로그램</h4>
-                      <p className="text-slate-400">보건복지부와 한국사회복지공단에서 운영하는 공식 사업</p>
+                      <p className="text-slate-400">보건복지부에서 시행함</p>
                     </div>
                   </div>
 
@@ -358,7 +356,7 @@ export default function Home() {
                     </div>
                     <div>
                       <h4 className="text-xl font-semibold text-slate-200 mb-2">전문가 자격 보장</h4>
-                      <p className="text-slate-400">한국심리학회 자격을 보유한 상담심리사가 직접 상담</p>
+                      <p className="text-slate-400">국가자격 및 한국심리학회, 한국상담학회 자격을 보유한 심리사만이 상담서비스 제공</p>
                     </div>
                   </div>
 
@@ -373,14 +371,13 @@ export default function Home() {
                   </div>
 
                   <div className="mt-8 pt-8 border-t border-slate-700">
-                    {/* 상단 영역 -申请 방법 안내 */}
+                    {/* 상단 영역 -신청 방법 안내 */}
                     <div className="mb-6">
                       <p className="text-slate-400 leading-relaxed">
                         학교, 정신건강증진센터, 청소년상담복지센터, 병의원 의뢰서 등을 통해 신청하거나 
                         직접 센터로 문의하시면 자세한 안내를 받으실 수 있습니다.
                       </p>
                     </div>
-                    
                     {/* 하단 영역 - 2개 섹션으로 분할 */}
                     <div className="grid md:grid-cols-2 gap-6">
                       {/* 좌측 - 서비스 유형 안내 */}
@@ -389,7 +386,6 @@ export default function Home() {
                           본 센터는 1급, 2급 유형의 서비스를 제공함
                         </p>
                       </div>
-                      
                       {/* 우측 - 카카오톡 문의 */}
                       <div className="flex flex-col items-center justify-center space-y-3">
                         <a 
@@ -429,7 +425,7 @@ export default function Home() {
                 <div className="absolute inset-0 rounded-full bg-yellow-400 animate-ping opacity-75"></div>
               </div>
             </div>
-            <p className="text-lg text-slate-400">임상심리전문가 종합심리검사(Full Battery) 검사 및 해석상담</p>
+            <p className="text-lg text-slate-400">임상심리전문가 종합심리검사(Full Battery) 검사 및 상담심리전문가의 해석상담</p>
           </div>
 
           <div className="bg-slate-800/50 p-12 rounded-3xl border border-slate-600 backdrop-blur-sm">
@@ -441,7 +437,6 @@ export default function Home() {
                   className="w-full h-auto rounded-2xl object-cover object-top shadow-2xl border border-slate-700"
                 />
               </div>
-              
               <div className="space-y-8">
                 <div>
                   <h3 className="text-3xl font-bold text-slate-100 mb-6">전문 종합심리검사 서비스</h3>
@@ -478,7 +473,7 @@ export default function Home() {
                       <i className="ri-chat-heart-line text-white text-sm"></i>
                     </div>
                     <div>
-                      <h4 className="text-xl font-semibold text-slate-200 mb-2">해석상담 제공</h4>
+                      <h4 className="text-xl font-semibold text-slate-200 mb-2">상담심리전문가의 해석상담 제공</h4>
                       <p className="text-slate-400">상담심리전문가의 전문적인 해석상담으로 결과 설명</p>
                     </div>
                   </div>
@@ -492,14 +487,14 @@ export default function Home() {
                       <p className="text-slate-300">매주 토요일</p>
                       <p className="text-slate-400 text-sm mt-1">하루 2명만 가능</p>
                     </div>
-                    
                     <div className="bg-slate-700/50 p-6 rounded-xl border border-slate-600">
                       <h4 className="text-lg font-semibold text-slate-200 mb-3 flex items-center">
                         <i className="ri-time-line text-pink-400 mr-2"></i>
                         소요 시간
                       </h4>
-                      <p className="text-slate-300">3~4시간</p>
-                      <p className="text-slate-400 text-sm mt-1">예약 필수</p>
+                      <p className="text-slate-300">검사시행 3~4시간</p>
+                      <p className="text-slate-300">해석상담 1시간 (검사 1~2주 후)</p>
+                      <p className="text-pink-300 text-sm mt-2 font-medium">예약 필수</p>
                     </div>
                   </div>
                 </div>
@@ -583,7 +578,7 @@ export default function Home() {
                       </div>
                       <div>
                         <span className="text-slate-300 font-medium">종합심리검사 (Full Battery)</span>
-                        <p className="text-slate-400 text-sm">임상심리전문가 실시, 3~4시간 소요</p>
+                        <p className="text-slate-400 text-sm">검사시행 3~4시간(임상심리전문가)<br />해석상담 1시간(상담심리전문가)</p>
                       </div>
                     </div>
                   </div>
@@ -622,8 +617,10 @@ export default function Home() {
                 <i className="ri-map-pin-2-line text-white text-2xl"></i>
               </div>
               <h3 className="text-xl font-bold text-slate-100 mb-4">찾아오시는 길</h3>
-              <p className="text-slate-400 mb-4">대구광역시 수성구 동대구로346 
-              범어서한포레스트 오피스텔</p>
+              <p className="text-slate-400 mb-4">
+                대구광역시 수성구 동대구로 346<br />
+                범어서한포레스트 오피스텔
+              </p>
               <a 
                 href="https://map.naver.com/v5/search/%EB%93%9C%EB%A6%BC%EC%8B%AC%EB%A6%AC%EC%83%81%EB%8B%B4%EC%84%BC%ED%84%B0" 
                 target="_blank" 
