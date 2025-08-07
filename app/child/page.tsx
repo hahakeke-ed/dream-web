@@ -17,7 +17,7 @@ export default function ChildCounseling() {
                 className="w-12 h-12 object-cover object-top rounded-lg"
               />
               <div className="flex flex-col">
-                <h1 className="text-2xl font-[\'Pacifico\'] text-amber-400 leading-tight">드림심리상담센터</h1>
+                <h1 className="text-2xl font-[\\\'Pacifico\\\'] text-amber-400 leading-tight">드림심리상담센터</h1>
                 <p className="text-sm text-slate-400 font-medium">전문심리상담기관</p>
               </div>
             </div>
@@ -452,7 +452,7 @@ export default function ChildCounseling() {
               className="w-10 h-10 object-cover object-top rounded-lg"
             />
             <div className="flex flex-col">
-              <h3 className="text-2xl font-[\'Pacifico\'] text-amber-400 leading-tight">드림심리상담센터</h3>
+              <h3 className="text-2xl font-[\\\'Pacifico\\\'] text-amber-400 leading-tight">드림심리상담센터</h3>
               <p className="text-sm text-slate-400 font-medium">전문심리상담기관</p>
             </div>
           </div>

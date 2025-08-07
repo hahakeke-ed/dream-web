@@ -1,4 +1,3 @@
-
 'use client';
 
 import Link from 'next/link';
@@ -17,7 +16,7 @@ export default function IndividualCounseling() {
                 className="w-12 h-12 object-cover object-top rounded-lg"
               />
               <div className="flex flex-col">
-                <h1 className="text-2xl font-[\'Pacifico\'] text-amber-400 leading-tight">드림심리상담센터</h1>
+                <h1 className="text-2xl font-[\\\\\\\'Pacifico\\\\\\\'] text-amber-400 leading-tight">드림심리상담센터</h1>
                 <p className="text-sm text-slate-400 font-medium">전문심리상담기관</p>
               </div>
             </div>
@@ -42,9 +41,9 @@ export default function IndividualCounseling() {
           />
         </div>
         <div className="relative max-w-4xl mx-auto text-center">
-          <h1 className="text-5xl font-bold mb-6">개인 咨询</h1>
+          <h1 className="text-5xl font-bold mb-6">개인 상담</h1>
           <p className="text-xl mb-8 text-slate-300">
-            你 seul을 위한 맞춤형 심리상담으로<br />
+            당신 혼자를 위한 맞춤형 심리상담으로<br />
             마음의 어려움을 함께 해결해나갑니다
           </p>
         </div>
@@ -61,7 +60,7 @@ export default function IndividualCounseling() {
                 <p className="text-lg text-slate-400 mb-6 leading-relaxed">
                   개인상담은 일대일 상담을 통해 개인이 경험하는 심리적, 정서적 어려움을 
                   전문적으로 도와드리는 서비스입니다. 안전하고 따뜻한 상담 공간에서 
-                 自己的 마음을 깊이 탐색하고 건강한 변화를 만들어갑니다.
+                  자신의 마음을 깊이 탐색하고 건강한 변화를 만들어갑니다.
                 </p>
                 <div className="space-y-3">
                   <div className="flex items-center space-x-3">
@@ -204,7 +203,7 @@ export default function IndividualCounseling() {
                 <div className="w-20 h-20 bg-amber-600 rounded-full flex items-center justify-center mx-auto mb-6">
                   <i className="ri-chat-check-line text-white text-2xl"></i>
                 </div>
-                <h3 className="text-lg font-bold text-slate-100 mb-3">1단계: 초기 면谈</h3>
+                <h3 className="text-lg font-bold text-slate-100 mb-3">1단계: 초기 면담</h3>
                 <p className="text-slate-400 text-sm leading-relaxed">
                   현재 상황과 어려움을 파악하고 상담 목표를 함께 설정합니다
                 </p>
@@ -250,7 +249,7 @@ export default function IndividualCounseling() {
             </p>
             <div className="flex flex-col md:flex-row gap-4 justify-center">
               <button className="bg-amber-600 text-slate-900 px-8 py-4 rounded-full font-bold text-lg hover:bg-amber-500 transition-colors cursor-pointer whitespace-nowrap">
-                카카오채널 예약 예약
+                카카오채널 예약
               </button>
               <button className="border-2 border-amber-400 text-amber-400 px-8 py-4 rounded-full font-bold text-lg hover:bg-amber-400 hover:text-slate-900 transition-colors cursor-pointer whitespace-nowrap">
                 전화 예약 053-759-1282
@@ -270,7 +269,7 @@ export default function IndividualCounseling() {
               className="w-10 h-10 object-cover object-top rounded-lg"
             />
             <div className="flex flex-col">
-              <h3 className="text-2xl font-[\'Pacifico\'] text-amber-400 leading-tight">드림심리상담센터</h3>
+              <h3 className="text-2xl font-[\\\\\\\'Pacifico\\\\\\\'] text-amber-400 leading-tight">드림심리상담센터</h3>
               <p className="text-sm text-slate-400 font-medium">전문심리상담기관</p>
             </div>
           </div>

@@ -17,7 +17,7 @@ export default function FamilyCounseling() {
                 className="w-12 h-12 object-cover object-top rounded-lg"
               />
               <div className="flex flex-col">
-                <h1 className="text-2xl font-[\'Pacifico\'] text-amber-400 leading-tight">드림심리상담센터</h1>
+                <h1 className="text-2xl font-[\\\'Pacifico\\\''] text-amber-400 leading-tight">드림심리상담센터</h1>
                 <p className="text-sm text-slate-400 font-medium">전문심리상담기관</p>
               </div>
             </div>
@@ -130,7 +130,7 @@ export default function FamilyCounseling() {
                 <div className="w-16 h-16 bg-blue-600 rounded-2xl flex items-center justify-center mb-6">
                   <i className="ri-parent-line text-white text-2xl"></i>
                 </div>
-                <h3 className="text-2xl font-bold text-slate-100 mb-4"> 부분 가족상담</h3>
+                <h3 className="text-2xl font-bold text-slate-100 mb-4">부분 가족상담</h3>
                 <p className="text-slate-400 mb-4 leading-relaxed">
                   특정 구성원들 간의 관계 개선에 집중하여 진행하는 맞춤형 상담입니다.
                 </p>
@@ -366,10 +366,10 @@ export default function FamilyCounseling() {
             </p>
             <div className="flex flex-col md:flex-row gap-4 justify-center">
               <button className="bg-emerald-600 text-white px-8 py-4 rounded-full font-bold text-lg hover:bg-emerald-500 transition-colors cursor-pointer whitespace-nowrap">
-                카카오채널 예약 예약
+                카카오채널 예약
               </button>
               <button className="border-2 border-amber-400 text-amber-400 px-8 py-4 rounded-full font-bold text-lg hover:bg-amber-400 hover:text-slate-900 transition-colors cursor-pointer whitespace-nowrap">
-                téléphone 상담 053-759-1282
+                전화 상담 053-759-1282
               </button>
             </div>
           </div>
@@ -386,7 +386,7 @@ export default function FamilyCounseling() {
               className="w-10 h-10 object-cover object-top rounded-lg"
             />
             <div className="flex flex-col">
-              <h3 className="text-2xl font-[\'Pacifico\'] text-amber-400 leading-tight">드림심리상담센터</h3>
+              <h3 className="text-2xl font-[\\\'Pacifico\\\''] text-amber-400 leading-tight">드림심리상담센터</h3>
               <p className="text-sm text-slate-400 font-medium">전문심리상담기관</p>
             </div>
           </div>

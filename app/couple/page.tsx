@@ -17,7 +17,7 @@ export default function CoupleCounseling() {
                 className="w-12 h-12 object-cover object-top rounded-lg"
               />
               <div className="flex flex-col">
-                <h1 className="text-2xl font-[\'Pacifico\'] text-amber-400 leading-tight">드림심리상담센터</h1>
+                <h1 className="text-2xl font-[\\\'Pacifico\\\'] text-amber-400 leading-tight">드림심리상담센터</h1>
                 <p className="text-sm text-slate-400 font-medium">전문심리상담기관</p>
               </div>
             </div>
@@ -142,7 +142,7 @@ export default function CoupleCounseling() {
                   <li>• 감정적 연결 강화</li>
                   <li>• 로맨스 회복</li>
                   <li>• 신뢰 재구축</li>
-                  <li>• 친밀한 대화</li>
+                  <li>• 친密한 대화</li>
                 </ul>
               </div>
 
@@ -253,7 +253,7 @@ export default function CoupleCounseling() {
                     <div className="w-6 h-6 bg-rose-600 rounded-full flex items-center justify-center mt-0.5">
                       <i className="ri-check-line text-white text-sm"></i>
                     </div>
-                    <span className="text-slate-300">갈등 상황에서의 감정 조절能力 향상</span>
+                    <span className="text-slate-300">갈등 상황에서의 감정 조절 능력 향상</span>
                   </li>
                   <li className="flex items-start space-x-3">
                     <div className="w-6 h-6 bg-rose-600 rounded-full flex items-center justify-center mt-0.5">
@@ -265,7 +265,7 @@ export default function CoupleCounseling() {
                     <div className="w-6 h-6 bg-rose-600 rounded-full flex items-center justify-center mt-0.5">
                       <i className="ri-check-line text-white text-sm"></i>
                     </div>
-                    <span className="text-slate-300">有效的な 의사소통 방법 습득</span>
+                    <span className="text-slate-300">효과적인 의사소통 방법 습득</span>
                   </li>
                   <li className="flex items-start space-x-3">
                     <div className="w-6 h-6 bg-rose-600 rounded-full flex items-center justify-center mt-0.5">
@@ -283,7 +283,7 @@ export default function CoupleCounseling() {
                     <div className="w-6 h-6 bg-amber-600 rounded-full flex items-center justify-center mt-0.5">
                       <i className="ri-check-line text-white text-sm"></i>
                     </div>
-                    <span className="text-slate-300">깊어진 신뢰와 친밀감</span>
+                    <span className="text-slate-300">안정적이고 만족스러운 관계 유지</span>
                   </li>
                   <li className="flex items-start space-x-3">
                     <div className="w-6 h-6 bg-amber-600 rounded-full flex items-center justify-center mt-0.5">
@@ -295,13 +295,13 @@ export default function CoupleCounseling() {
                     <div className="w-6 h-6 bg-amber-600 rounded-full flex items-center justify-center mt-0.5">
                       <i className="ri-check-line text-white text-sm"></i>
                     </div>
-                    <span className="text-slate-300">미래 갈등 예방 能力</span>
+                    <span className="text-slate-300">미래 갈등 예방 능력</span>
                   </li>
                   <li className="flex items-start space-x-3">
                     <div className="w-6 h-6 bg-amber-600 rounded-full flex items-center justify-center mt-0.5">
                       <i className="ri-check-line text-white text-sm"></i>
                     </div>
-                    <span className="text-slate-300">家族 全体の 幸福感 増進</span>
+                    <span className="text-slate-300">가족 전체의 행복감 증진</span>
                   </li>
                 </ul>
               </div>
@@ -316,7 +316,7 @@ export default function CoupleCounseling() {
             </p>
             <div className="flex flex-col md:flex-row gap-4 justify-center">
               <button className="bg-rose-600 text-white px-8 py-4 rounded-full font-bold text-lg hover:bg-rose-500 transition-colors cursor-pointer whitespace-nowrap">
-                카카오채널 예약 예약
+                카카오채널 예약
               </button>
               <button className="border-2 border-amber-400 text-amber-400 px-8 py-4 rounded-full font-bold text-lg hover:bg-amber-400 hover:text-slate-900 transition-colors cursor-pointer whitespace-nowrap">
                 전화 예약 053-759-1282
@@ -336,7 +336,7 @@ export default function CoupleCounseling() {
               className="w-10 h-10 object-cover object-top rounded-lg"
             />
             <div className="flex flex-col">
-              <h3 className="text-2xl font-[\'Pacifico\'] text-amber-400 leading-tight">드림심리상담센터</h3>
+              <h3 className="text-2xl font-[\\\'Pacifico\\\'] text-amber-400 leading-tight">드림심리상담센터</h3>
               <p className="text-sm text-slate-400 font-medium">전문심리상담기관</p>
             </div>
           </div>

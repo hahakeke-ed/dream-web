@@ -13,7 +13,7 @@ export default function Home() {
       id: 'home',
       name: '홈',
       href: '/',
-      description: '드림심리상담센터 메인 페이지입니다. 전체적인 서비스介绍와 상담 프로그램을 확인할 수 있습니다.'
+      description: '드림심리상담센터 메인 페이지입니다. 전체적인 서비스紹介와 상담 프로그램을 확인할 수 있습니다.'
     },
     {
       id: 'counseling',
@@ -31,13 +31,13 @@ export default function Home() {
       id: 'national-support',
       name: '전국민마음투자지원사업',
       href: '/national-support',
-      description: '우울, 불안 등 정서적 어려움을 겪는 국민에게 전문적인 심리상담 서비스를 제공하는 정부 사업입니다. 학교나 정신건강증진센터, 청소년상담복지센터, 병의원 의뢰서 등을 통해 신청할 수 있습니다.'
+      description: '우울, 불안 등 정서적 어려움을 겪는 국민들에게 전문적인 심리상담 서비스를 제공하는 정부 사업입니다. 학교나 정신건강증진센터, 청소년상담복지센터, 병의원 의뢰서 등을 통해 신청할 수 있습니다.'
     },
     {
       id: 'eap',
       name: 'EAP 기업심리상담',
       href: '/eap',
-      description: '본기관과 연계된 기업체 임직원 및 가족에 대한 심리상담 서비스를 제공합니다.'
+      description: '본 기관과 연계된 기업체 임직원 및 가족에 대한 심리상담 서비스를 제공합니다.'
     }
   ];
 
@@ -58,7 +58,7 @@ export default function Home() {
     const menuIndex = menuItems.findIndex(item => item.id === menuId);
     if (menuIndex === -1) return 'left-8';
 
-    // 각 메뉴별로 화살표 위치를 메뉴 글자 중앙으로 정확히 계산
+    // 各メニュー別に位置を計算
     const positions = ['left-6', 'left-28', 'left-56', 'left-96', 'left-[140px]'];
     return positions[menuIndex] || 'left-6';
   };
@@ -116,9 +116,12 @@ export default function Home() {
 
       {/* Hero Section */}
       <section 
-        className="relative py-32 px-4 text-white min-h-screen flex items-center bg-cover bg-center"
+        className="relative py-32 px-4 text-white min-h-screen flex items-center"
         style={{
-          backgroundImage: `linear-gradient(rgba(30, 41, 59, 0.7), rgba(30, 41, 59, 0.7)), url(\'https://readdy.ai/api/search-image?query=Professional%20psychology%20counseling%20center%20interior%20with%20comfortable%20seating%20area%2C%20warm%20lighting%20with%20soft%20neutral%20tones%2C%20therapy%20office%20with%20calming%20ambiance%20for%20mental%20health%20services%2C%20modern%20design%20with%20comfortable%20chairs%20and%20plants%2C%20peaceful%20atmosphere%20with%20warm%20natural%20lighting&width=1200&height=600&seq=main-hero-v25&orientation=landscape\')`
+          backgroundImage: `linear-gradient(rgba(30, 41, 59, 0.7), rgba(30, 41, 59, 0.7)), url('https://readdy.ai/api/search-image?query=Professional%20psychology%20counseling%20center%20interior%20with%20comfortable%20seating%20area%2C%20warm%20lighting%20with%20soft%20neutral%20tones%2C%20therapy%20office%20with%20calming%20ambiance%20for%20mental%20health%20services%2C%20modern%20design%20with%20comfortable%20chairs%20and%20plants%2C%20peaceful%20atmosphere%20with%20warm%20natural%20lighting&width=1200&height=600&seq=main-hero-v25&orientation=landscape')`,
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          backgroundRepeat: 'no-repeat'
         }}
       >
         <div className="relative max-w-4xl mx-auto text-center">
@@ -298,14 +301,13 @@ export default function Home() {
               </div>
               <h3 className="text-xl font-bold text-slate-100 mb-4">아동/청소년상담</h3>
               <p className="text-slate-400 mb-4">
-                성장기 아이들의 건강한 발달을 위한 전문 상담
+                성장기 아이들의 건강한 발달을 위한 전문상담
               </p>
               <ul className="text-sm text-slate-500 space-y-2">
-                <li>• 놀이 치료</li>
+                <li>• 놀이치료</li>
                 <li>• 학습 문제</li>
                 <li>• 행동 수정</li>
                 <li>• 정서 발달</li>
-                <li>• 또래 관계</li>
               </ul>
             </Link>
           </div>
@@ -317,7 +319,7 @@ export default function Home() {
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-slate-100 mb-4">전국민마음투자지원사업</h2>
-            <p className="text-lg text-slate-400">정부 지원사업으로 부담 없이 전문 심리상담을 받으실 수 있습니다</p>
+            <p className="text-lg text-slate-400">정부 지원 사업으로 부담없이 전문 심리상담을 받으실 수 있습니다</p>
           </div>
 
           <div className="bg-slate-800/50 p-12 rounded-3xl border border-slate-600 backdrop-blur-sm">
@@ -325,7 +327,7 @@ export default function Home() {
               <div>
                 <img 
                   src="https://static.readdy.ai/image/7b8785b3350666cb22c8ef9ed87331b2/2cb60c42fc8d3c54ec27f2a879dd86e0.png"
-                  alt="전국민마음투자지원事業 안내"
+                  alt="전국민마음투자지원사업 안내"
                   className="w-full h-auto rounded-2xl object-cover object-top shadow-2xl border border-slate-700"
                 />
               </div>
@@ -335,7 +337,7 @@ export default function Home() {
                   <h3 className="text-3xl font-bold text-slate-100 mb-6">정부 지원 심리상담 서비스</h3>
                   <p className="text-lg text-slate-300 leading-relaxed mb-8">
                     드림심리상담센터는 <span className="text-blue-400 font-semibold">전국민마음투자지원사업 수행기관</span>으로 
-                    지정되어 우울, 불안 등 정서적 어려움을 겪는 국민들에게 전문적인 심리상담 서비스를 제공합니다.
+                    우울, 불안 등 정서적 어려움을 겪는 국민들에게 전문적인 심리상담 서비스를 제공합니다.
                   </p>
                 </div>
 
@@ -366,19 +368,46 @@ export default function Home() {
                     </div>
                     <div>
                       <h4 className="text-xl font-semibold text-slate-200 mb-2">경제적 부담 완화</h4>
-                      <p className="text-slate-400">정부 지원을 통해 합리적인 비용으로 전문 상담 이용 가능</p>
+                      <p className="text-slate-400">정부 지원을 통해 합리적인 비용으로 전문적인 상담 이용 가능</p>
                     </div>
                   </div>
 
                   <div className="mt-8 pt-8 border-t border-slate-700">
-                    <h4 className="text-xl font-semibold text-slate-200 mb-4">이용 방법</h4>
-                    <p className="text-slate-400 leading-relaxed mb-4">
-                      학교, 정신건강증진센터, 청소년상담복지센터, 병의원 의뢰서를 통해 신청하거나 
-                      직접 센터로 문의하시면 자세한 안내를 받으실 수 있습니다.
-                    </p>
-                    <p className="text-slate-300 font-semibold border border-slate-600 bg-slate-700/50 p-4 rounded-xl">
-                      본 센터는 1급, 2급 유형의 서비스를 제공함
-                    </p>
+                    {/* 상단 영역 -申请 방법 안내 */}
+                    <div className="mb-6">
+                      <p className="text-slate-400 leading-relaxed">
+                        학교, 정신건강증진센터, 청소년상담복지센터, 병의원 의뢰서 등을 통해 신청하거나 
+                        직접 센터로 문의하시면 자세한 안내를 받으실 수 있습니다.
+                      </p>
+                    </div>
+                    
+                    {/* 하단 영역 - 2개 섹션으로 분할 */}
+                    <div className="grid md:grid-cols-2 gap-6">
+                      {/* 좌측 - 서비스 유형 안내 */}
+                      <div>
+                        <p className="text-slate-300 font-semibold border border-slate-600 bg-slate-700/50 p-4 rounded-xl">
+                          본 센터는 1급, 2급 유형의 서비스를 제공함
+                        </p>
+                      </div>
+                      
+                      {/* 우측 - 카카오톡 문의 */}
+                      <div className="flex flex-col items-center justify-center space-y-3">
+                        <a 
+                          href="https://pf.kakao.com/_NxbxnRn" 
+                          target="_blank" 
+                          rel="noopener noreferrer"
+                          className="bg-gradient-to-r from-yellow-400 to-yellow-500 text-black w-20 h-20 rounded-2xl font-bold hover:from-yellow-300 hover:to-yellow-400 transition-all transform hover:scale-105 shadow-lg flex flex-col items-center justify-center cursor-pointer"
+                        >
+                          <i className="ri-chat-3-fill text-xl mb-1"></i>
+                          <div className="text-xs font-medium text-center leading-tight">
+                            전용 문의
+                          </div>
+                        </a>
+                        <p className="text-xs text-slate-400 text-center">
+                          전국민마음투자지원사업 전용 문의
+                        </p>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -391,7 +420,15 @@ export default function Home() {
       <section className="py-20 px-4 bg-gradient-to-br from-purple-900/20 to-pink-900/30">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-slate-100 mb-4">마음돋보기 서비스 실시</h2>
+            <div className="flex items-center justify-center gap-4 mb-4">
+              <h2 className="text-4xl font-bold text-slate-100">마음돋보기 서비스 실시</h2>
+              <div className="relative">
+                <span className="inline-flex items-center px-3 py-1 rounded-full text-sm font-bold text-red-600 bg-yellow-400 animate-pulse shadow-lg border-2 border-yellow-300">
+                  NEW
+                </span>
+                <div className="absolute inset-0 rounded-full bg-yellow-400 animate-ping opacity-75"></div>
+              </div>
+            </div>
             <p className="text-lg text-slate-400">임상심리전문가 종합심리검사(Full Battery) 검사 및 해석상담</p>
           </div>
 
@@ -432,7 +469,7 @@ export default function Home() {
                     </div>
                     <div>
                       <h4 className="text-xl font-semibold text-slate-200 mb-2">임상심리전문가 직접 실시</h4>
-                      <p className="text-slate-400">지역대학병원 소속 임상심리전문가가 직접 검사 진행</p>
+                      <p className="text-slate-400">지역대학병원의 임상심리전문가가 직접 검사 진행</p>
                     </div>
                   </div>
 
@@ -453,7 +490,7 @@ export default function Home() {
                         검사 일정
                       </h4>
                       <p className="text-slate-300">매주 토요일</p>
-                      <p className="text-slate-400 text-sm mt-1"> 하루 2명만 가능</p>
+                      <p className="text-slate-400 text-sm mt-1">하루 2명만 가능</p>
                     </div>
                     
                     <div className="bg-slate-700/50 p-6 rounded-xl border border-slate-600">
@@ -490,7 +527,7 @@ export default function Home() {
                 <div className="flex-1">
                   <h3 className="text-2xl font-bold text-slate-100 mb-4">서비스 신청</h3>
                   <p className="text-slate-300 mb-6">
-                    1:1 예약 서비스이므로 반드시 전화나 카카오톡채널을 통해 예약해야 합니다
+                    현재 1:1 예약서비스이므로 반드시 전화나 카카오톡채널을 통해 예약해야 합니다
                   </p>
                   <div className="space-y-3">
                     <div className="flex items-center space-x-3">
@@ -572,26 +609,26 @@ export default function Home() {
             </div>
 
             <div className="bg-slate-800 p-8 rounded-2xl border border-slate-600">
-              <div className="w-16 h-16 bg-emerald-600 rounded-2xl flex items-center justify-center mx-auto mb-6">
-                <i className="ri-chat-3-line text-white text-2xl"></i>
+              <div className="w-16 h-16 bg-yellow-400 rounded-2xl flex items-center justify-center mx-auto mb-6">
+                <i className="ri-chat-3-fill text-white text-2xl"></i>
               </div>
               <h3 className="text-xl font-bold text-slate-100 mb-4">카카오채널 예약</h3>
-              <p className="text-slate-400 mb-4">카카오톡을 통한 편리한 상담 예약</p>
-              <p className="text-xl font-bold text-emerald-400">@드림심리상담센터</p>
+              <p className="text-slate-400 mb-4">카카오 채널 예약 문의</p>
+              <p className="text-xl font-bold text-yellow-400">@드림심리상담센터</p>
             </div>
 
             <div className="bg-slate-800 p-8 rounded-2xl border border-slate-600">
-              <div className="w-16 h-16 bg-blue-600 rounded-2xl flex items-center justify-center mx-auto mb-6">
+              <div className="w-16 h-16 bg-green-600 rounded-2xl flex items-center justify-center mx-auto mb-6">
                 <i className="ri-map-pin-2-line text-white text-2xl"></i>
               </div>
               <h3 className="text-xl font-bold text-slate-100 mb-4">찾아오시는 길</h3>
               <p className="text-slate-400 mb-4">대구광역시 수성구 동대구로346 
-범어서한포레스트 오피스텔</p>
+              범어서한포레스트 오피스텔</p>
               <a 
                 href="https://map.naver.com/v5/search/%EB%93%9C%EB%A6%BC%EC%8B%AC%EB%A6%AC%EC%83%81%EB%8B%B4%EC%84%BC%ED%84%B0" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="inline-block bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-500 transition-colors cursor-pointer whitespace-nowrap"
+                className="inline-block bg-green-600 text-white px-6 py-2 rounded-lg hover:bg-green-500 transition-colors cursor-pointer whitespace-nowrap"
               >
                 네이버 지도 보기
               </a>
@@ -610,7 +647,7 @@ export default function Home() {
               className="w-10 h-10 object-cover object-top rounded-lg"
             />
             <div className="flex flex-col">
-              <h3 className="text-2xl font-[\\\'Pacifico\\\'] text-amber-400 leading-tight">드림심리상담센터</h3>
+              <h3 className="text-2xl font-[\'Pacifico\'] text-amber-400 leading-tight">드림심리상담센터</h3>
               <p className="text-sm text-slate-400 font-medium">전문심리상담기관</p>
             </div>
           </div>
