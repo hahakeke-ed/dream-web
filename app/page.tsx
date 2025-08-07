@@ -464,7 +464,7 @@ export default function Home() {
                     </div>
                     <div>
                       <h4 className="text-xl font-semibold text-slate-200 mb-2">임상심리전문가 직접 실시</h4>
-                      <p className="text-slate-400"> 임상심리전문가가 직접 검사 진행</p>
+                      <p className="text-slate-400"> 정신건강의학과,정신보건기관과 동일하게 임상심리전문가가 직접 검사 진행</p>
                     </div>
                   </div>
 
@@ -474,7 +474,7 @@ export default function Home() {
                     </div>
                     <div>
                       <h4 className="text-xl font-semibold text-slate-200 mb-2">상담심리전문가의 해석상담 제공</h4>
-                      <p className="text-slate-400">상담심리전문가의 전문적인 해석상담으로 결과 설명</p>
+                      <p className="text-slate-400">상담심리전문가의 충분한 시간의 전문적인 해석상담으로 결과 설명</p>
                     </div>
                   </div>
 
