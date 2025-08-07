@@ -464,7 +464,7 @@ export default function Home() {
                     </div>
                     <div>
                       <h4 className="text-xl font-semibold text-slate-200 mb-2">임상심리전문가 직접 실시</h4>
-                      <p className="text-slate-400">지역대학병원의 임상심리전문가가 직접 검사 진행</p>
+                      <p className="text-slate-400"> 임상심리전문가가 직접 검사 진행</p>
                     </div>
                   </div>
 
