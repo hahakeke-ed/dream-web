@@ -374,7 +374,7 @@ export default function Home() {
                     {/* 상단 영역 -신청 방법 안내 */}
                     <div className="mb-6">
                       <p className="text-slate-400 leading-relaxed">
-                        학교, 정신건강증진센터, 청소년상담복지센터, 병의원 의뢰서 등을 통해 신청하거나 
+                        학교, 정신건강복지센터, 청소년상담복지센터, 병의원 의뢰서 등을 통해 신청하거나 
                         직접 센터로 문의하시면 자세한 안내를 받으실 수 있습니다.
                       </p>
                     </div>
@@ -442,7 +442,7 @@ export default function Home() {
                   <h3 className="text-3xl font-bold text-slate-100 mb-6">전문 종합심리검사 서비스</h3>
                   <p className="text-lg text-slate-300 leading-relaxed mb-8">
                     <span className="text-purple-400 font-semibold">2025년 8월부터</span> 새롭게 종합심리검사를 실시합니다. 
-                    지역대학병원의 임상심리전문가가 직접 종합심리검사(지능, 정서, 심리 요인등)를 시행하고, 
+                    임상심리전문가가 직접 종합심리검사(지능, 정서, 심리 요인등)를 시행하고, 
                     상담심리전문가의 해석 상담이 진행됩니다.
                   </p>
                 </div>
