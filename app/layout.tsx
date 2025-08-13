@@ -55,12 +55,6 @@ export default function RootLayout({
           name="naver-site-verification"
           content="451c2d7a8f96e15aec129b80d89b645ebe51b525"
         />
-
-        {/* 구글 서치 콘솔 소유확인 메타태그 */}
-        <meta
-          name="google-site-verification"
-          content="5jL9mb_PDv1TMT6blMSxO3AFN9yvCsdHYj5S_HZPezc"
-        />
       </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} ${pacifico.variable} antialiased`}
