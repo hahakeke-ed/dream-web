@@ -59,7 +59,7 @@ export default function RootLayout({
         {/* 구글 서치 콘솔 소유확인 메타태그 */}
         <meta
           name="google-site-verification"
-          content="google8597533b73bb418d.html"
+          content="5jL9mb_PDv1TMT6blMSxO3AFN9yvCsdHYj5S_HZPezc"
         />
       </head>
       <body
