@@ -21,16 +21,16 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Mind Study - 심리테스트 & 마음 성장 공간",
+  title: "Mind Study - 심리 상담 & 마음 성장 공간",
   description:
-    "심리 분석, 집중력 테스트, 자기계발 자료를 제공하는 온라인 플랫폼",
+    "심리 분석, 치유, 자기성 자료를 제공하는 온라인 플랫폼",
   alternates: {
     canonical: "https://mind-study.co.kr",
   },
   openGraph: {
-    title: "Mind Study - 심리테스트 & 마음 성장 공간",
+    title: "Mind Study - 심리 상담 & 마음 성장 공간",
     description:
-      "심리 분석, 집중력 테스트, 자기계발 자료를 제공하는 온라인 플랫폼",
+      "심리 분석, 치유, 자기성장 자료를 제공하는 온라인 플랫폼",
     url: "https://mind-study.co.kr",
     siteName: "Mind Study",
     type: "website",
@@ -38,9 +38,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary",
-    title: "Mind Study - 심리테스트 & 마음 성장 공간",
+    title: "Mind Study - 심리 상담 & 마음 성장 공간",
     description:
-      "심리 분석, 집중력 테스트, 자기계발 자료를 제공하는 온라인 플랫폼",
+      "심리 분석, 치유, 자기계발 자료를 제공하는 온라인 플랫폼",
   },
 };
 
@@ -50,10 +50,16 @@ export default function RootLayout({
   return (
     <html lang="ko" suppressHydrationWarning>
       <head>
-        {/* 네이버 소유확인 메타태그(필수) */}
+        {/* 네이버 소유확인 메타태그 */}
         <meta
           name="naver-site-verification"
           content="451c2d7a8f96e15aec129b80d89b645ebe51b525"
+        />
+
+        {/* 구글 서치 콘솔 소유확인 메타태그 */}
+        <meta
+          name="google-site-verification"
+          content="google8597533b73bb418d.html"
         />
       </head>
       <body
