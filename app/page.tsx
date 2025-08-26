@@ -46,21 +46,11 @@ export default function Home() {
       window.location.reload();
       return;
     }
-
     if (activeTooltip === menuId) {
       setActiveTooltip(null);
     } else {
       setActiveTooltip(menuId);
     }
-  };
-
-  const getTooltipArrowPosition = (menuId: string) => {
-    const menuIndex = menuItems.findIndex(item => item.id === menuId);
-    if (menuIndex === -1) return 'left-8';
-
-    // 각 메뉴별 위치 계산
-    const positions = ['left-6', 'left-28', 'left-56', 'left-96', 'left-[140px]'];
-    return positions[menuIndex] || 'left-6';
   };
 
   return (
@@ -76,7 +66,7 @@ export default function Home() {
                 className="w-12 h-12 object-cover object-top rounded-lg"
               />
               <div className="flex flex-col">
-                <h1 className="text-2xl font-['Pacifico'] text-amber-400 leading-tight">드림심리상담센터</h1>
+                <h1 className="text-2xl font-[\'Pacifico\'] text-amber-400 leading-tight">드림심리상담센터</h1>
                 <p className="text-sm text-slate-400 font-medium">전문심리상담기관</p>
               </div>
             </div>
@@ -91,7 +81,6 @@ export default function Home() {
                   </button>
                 </div>
               ))}
-              {/* Tooltip - positioned relative to entire nav */}
               {activeTooltip && (
                 <div className="absolute top-full left-0 right-0 mt-3 z-50">
                   <div className="bg-slate-600/80 backdrop-blur-sm text-white p-6 rounded-2xl shadow-2xl border border-slate-500/50 w-full">
@@ -105,7 +94,6 @@ export default function Home() {
           </div>
         </div>
 
-        {/* Overlay to close tooltips */}
         {activeTooltip && (
           <div 
             className="fixed inset-0 z-40" 
@@ -315,7 +303,7 @@ export default function Home() {
 
       {/* National Mind Investment Support Program Section */}
       <section className="py-20 px-4 bg-gradient-to-br from-blue-900/20 to-indigo-900/30">
-        <div className="max-w-6xl mx-auto">
+        <div className="max-w-6xl mx_auto">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-slate-100 mb-4">전국민마음투자지원사업</h2>
             <p className="text-lg text-slate-400">-정부 지원 사업으로 부담없이 전문 심리상담을 받으실 수 있습니다</p>
@@ -352,7 +340,7 @@ export default function Home() {
 
                   <div className="flex items-start space-x-4">
                     <div className="w-8 h-8 bg-emerald-600 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
-                      <i className="ri-shield-check-line text-white text-sm"></i>
+                      <i className="ri-shield-check-line text-white text_sm"></i>
                     </div>
                     <div>
                       <h4 className="text-xl font-semibold text-slate-200 mb-2">전문가 자격 보장</h4>
@@ -371,22 +359,18 @@ export default function Home() {
                   </div>
 
                   <div className="mt-8 pt-8 border-t border-slate-700">
-                    {/* 상단 영역 -신청 방법 안내 */}
                     <div className="mb-6">
                       <p className="text-slate-400 leading-relaxed">
                         학교, 정신건강복지센터, 청소년상담복지센터, 병의원 의뢰서 등을 통해 신청하거나 
                         직접 센터로 문의하시면 자세한 안내를 받으실 수 있습니다.
                       </p>
                     </div>
-                    {/* 하단 영역 - 2개 섹션으로 분할 */}
                     <div className="grid md:grid-cols-2 gap-6">
-                      {/* 좌측 - 서비스 유형 안내 */}
                       <div>
                         <p className="text-slate-300 font-semibold border border-slate-600 bg-slate-700/50 p-4 rounded-xl">
                           본 센터는 1급, 2급 유형의 서비스를 제공함
                         </p>
                       </div>
-                      {/* 우측 - 문자 예약 안내 */}
                       <div className="flex flex-col items-center justify-center space-y-3">
                         <div className="w-20 h-20 bg-amber-600 rounded-2xl flex items-center justify-center shadow-lg">
                           <i className="ri-chat-3-fill text-white text-xl"></i>
@@ -447,16 +431,6 @@ export default function Home() {
 
                 <div className="space-y-4">
                   <div className="flex items-start space-x-4">
-                    <div className="w-8 h-8 bg-purple-600 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
-                      <i className="ri-brain-line text-white text-sm"></i>
-                    </div>
-                    <div>
-                      <h4 className="text-xl font-semibold text-slate-200 mb-2">종합심리검사 실시</h4>
-                      <p className="text-slate-400">지능, 정서, 심리 요인 등을 종합적으로 평가하는 전문 검사</p>
-                    </div>
-                  </div>
-
-                  <div className="flex items-start space-x-4">
                     <div className="w-8 h-8 bg-pink-600 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
                       <i className="ri-user-star-line text-white text-sm"></i>
                     </div>
@@ -467,7 +441,7 @@ export default function Home() {
                   </div>
 
                   <div className="flex items-start space-x-4">
-                    <div className="w-8 h-8 bg-indigo-600 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                    <div className="w-8 h-8 bg-indigo-600 rounded-full flex items_center justify_center flex-shrink-0 mt-1">
                       <i className="ri-chat-heart-line text-white text-sm"></i>
                     </div>
                     <div>
@@ -510,86 +484,87 @@ export default function Home() {
             <p className="text-lg text-slate-400">1:1 예약서비스로 체계적이고 전문적인 상담을 제공합니다</p>
           </div>
 
-        <div className="grid md:grid-cols-2 gap-12">
-          {/* Step 1: Service Application */}
-          <div className="bg-gradient-to-br from-slate-800 to-gray-800 p-8 rounded-2xl border border-slate-700">
-            <div className="flex items-center space-x-6">
-              <div className="w-16 h-16 bg-amber-600 rounded-full flex items-center justify-center flex-shrink-0">
-                <span className="text-white text-2xl font-bold">1</span>
-              </div>
-              <div className="flex-1">
-                <h3 className="text-2xl font-bold text-slate-100 mb-4">서비스 신청</h3>
-                <p className="text-slate-300 mb-6">
-                  현재 1:1 예약서비스이므로 반드시 전화 또는 문자 예약을 통해 신청해 주세요.
-                </p>
-                <div className="space-y-4">
-                  <div className="flex items-center space-x-3">
-                    <div className="w-6 h-6 bg-amber-600 rounded-full flex items-center justify-center">
-                      <i className="ri-phone-line text-white text-sm"></i>
-                    </div>
-                    <span className="text-slate-300">전화 예약: 053-759-1282</span>
-                  </div>
-
-                  {/* 문자 예약 CTA */}
-                  <div>
-                    <div className="flex items-center space-x-3 mb-3">
+          <div className="grid md:grid-cols-2 gap-12">
+            {/* Step 1: Service Application */}
+            <div className="bg-gradient-to-br from-slate-800 to-gray-800 p-8 rounded-2xl border border-slate-700">
+              <div className="flex items-center space-x-6">
+                <div className="w-16 h-16 bg-amber-600 rounded-full flex items-center justify-center flex-shrink-0">
+                  <span className="text-white text-2xl font-bold">1</span>
+                </div>
+                <div className="flex-1">
+                  <h3 className="text-2xl font-bold text-slate-100 mb-4">서비스 신청</h3>
+                  <p className="text-slate-300 mb-6">
+                    현재 1:1 예약서비스이므로 반드시 전화 또는 문자 예약을 통해 신청해 주세요.
+                  </p>
+                  <div className="space-y-4">
+                    <div className="flex items-center space-x-3">
                       <div className="w-6 h-6 bg-amber-600 rounded-full flex items-center justify-center">
-                        <i className="ri-chat-3-line text-white text-sm"></i>
+                        <i className="ri-phone-line text-white text-sm"></i>
                       </div>
-                      <span className="text-slate-300 font-medium">문자 예약</span>
+                      <span className="text-slate-300">전화 예약: 053-759-1282</span>
                     </div>
-                    <SmsButton
-                      className="bg-amber-600 border-amber-600 text-white hover:bg-amber-500 hover:border-amber-500"
-                      body="안녕하세요. [이름/희망시간/상담유형] 남깁니다."
-                    >
-                      문자 예약
-                    </SmsButton>
-                    <p className="text-xs text-slate-500 mt-2">
-                      PC에서는 번호와 내용이 복사됩니다. 휴대폰에서 전송해주세요.
-                    </p>
+
+                    {/* 문자 예약 CTA */}
+                    <div>
+                      <div className="flex items-center space-x-3 mb-3">
+                        <div className="w-6 h-6 bg-amber-600 rounded-full flex items-center justify-center">
+                          <i className="ri-chat-3-line text-white text-sm"></i>
+                        </div>
+                        <span className="text-slate-300 font-medium">문자 예약</span>
+                      </div>
+                      <SmsButton
+                        className="bg-amber-600 border-amber-600 text-white hover:bg-amber-500 hover:border-amber-500"
+                        body="안녕하세요. [이름/희망시간/상담유형] 남깁니다."
+                      >
+                        문자 예약
+                      </SmsButton>
+                      <p className="text-xs text-slate-500 mt-2">
+                        PC에서는 번호와 내용이 복사됩니다. 휴대폰에서 전송해주세요.
+                      </p>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
-          </div>
 
-          {/* Step 2: Service Utilization */}
-          <div className="bg-gradient-to-br from-slate-800 to-gray-800 p-8 rounded-2xl border border-slate-700">
-            <div className="flex items-center space-x-6">
-              <div className="w-16 h-16 bg-emerald-600 rounded-full flex items-center justify-center flex-shrink-0">
-                <span className="text-white text-2xl font-bold">2</span>
-              </div>
-              <div className="flex-1">
-                <h3 className="text-2xl font-bold text-slate-100 mb-4">서비스 이용</h3>
-                <p className="text-slate-300 mb-6">
-                  상담 유형에 따라 소요시간이 다릅니다
-                </p>
-                <div className="space-y-3">
-                  <div className="flex items-start space-x-3">
-                    <div className="w-6 h-6 bg-emerald-600 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
-                      <i className="ri-user-3-line text-white text-sm"></i>
+            {/* Step 2: Service Utilization */}
+            <div className="bg-gradient-to-br from-slate-800 to-gray-800 p-8 rounded-2xl border border-slate-700">
+              <div className="flex items-center space-x-6">
+                <div className="w-16 h-16 bg-emerald-600 rounded-full flex items-center justify-center flex-shrink-0">
+                  <span className="text-white text-2xl font-bold">2</span>
+                </div>
+                <div className="flex-1">
+                  <h3 className="text-2xl font-bold text-slate-100 mb-4">서비스 이용</h3>
+                  <p className="text-slate-300 mb-6">
+                    상담 유형에 따라 소요시간이 다릅니다
+                  </p>
+                  <div className="space-y-3">
+                    <div className="flex items-start space-x-3">
+                      <div className="w-6 h-6 bg-emerald-600 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
+                        <i className="ri-user-3-line text-white text-sm"></i>
+                      </div>
+                      <div>
+                        <span className="text-slate-300 font-medium">개인상담</span>
+                        <p className="text-slate-400 text-sm">50분 기준</p>
+                      </div>
                     </div>
-                    <div>
-                      <span className="text-slate-300 font-medium">개인상담</span>
-                      <p className="text-slate-400 text-sm">50분 기준</p>
+                    <div className="flex items-start space-x-3">
+                      <div className="w-6 h-6 bg-emerald-600 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
+                        <i className="ri-group-line text-white text-sm"></i>
+                      </div>
+                      <div>
+                        <span className="text-slate-300 font-medium">부부상담, 가족상담</span>
+                        <p className="text-slate-400 text-sm">90분 기준</p>
+                      </div>
                     </div>
-                  </div>
-                  <div className="flex items-start space-x-3">
-                    <div className="w-6 h-6 bg-emerald-600 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
-                      <i className="ri-group-line text-white text-sm"></i>
-                    </div>
-                    <div>
-                      <span className="text-slate-300 font-medium">부부상담, 가족상담</span>
-                      <p className="text-slate-400 text-sm">90분 기준</p>
-                    </div>
-                  </div>
-                  <div className="flex items-start space-x-3">
-                    <div className="w-6 h-6 bg-emerald-600 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
-                      <i className="ri-clipboard-line text-white text-sm"></i>
-                    </div>
-                    <div>
-                      <span className="text-slate-300 font-medium">종합심리검사 (Full Battery)</span>
-                      <p className="text-slate-400 text-sm">검사시행 3~4시간(임상심리전문가)<br />해석상담 1시간(상담심리전문가)</p>
+                    <div className="flex items-start space-x-3">
+                      <div className="w-6 h-6 bg-emerald-600 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
+                        <i className="ri-clipboard-line text-white text-sm"></i>
+                      </div>
+                      <div>
+                        <span className="text-slate-300 font-medium">종합심리검사 (Full Battery)</span>
+                        <p className="text-slate-400 text-sm">검사시행 3~4시간(임상심리전문가)<br />해석상담 1시간(상담심리전문가)</p>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -604,7 +579,6 @@ export default function Home() {
         <div className="max-w-6xl mx-auto text-center">
           <h2 className="text-3xl font-bold text-slate-100 mb-8">상담 예약</h2>
 
-          {/* 2개 카드 배치: 문자 예약 + 찾아오시는 길 */}
           <div className="grid md:grid-cols-2 gap-8">
             {/* 문자 예약 */}
             <div className="bg-slate-800 p-8 rounded-2xl border border-slate-600 hover:border-amber-400 transition">
@@ -618,7 +592,7 @@ export default function Home() {
               <div className="flex justify-center">
                 <SmsButton
                   className="bg-amber-600 border-amber-600 text-white hover:bg-amber-500 hover:border-amber-500"
-                  body="안녕하세요. [이름/상담유형/희망날짜] 남깁니다."
+                  body="안녕하세요. [이름/희망시간/상담유형] 남깁니다."
                 >
                   문자 예약
                 </SmsButton>
@@ -661,7 +635,7 @@ export default function Home() {
               className="w-10 h-10 object-cover object-top rounded-lg"
             />
             <div className="flex flex-col">
-              <h3 className="text-2xl font-['Pacifico'] text-amber-400 leading-tight">드림심리상담센터</h3>
+              <h3 className="text-2xl font-[\'Pacifico\'] text-amber-400 leading-tight">드림심리상담센터</h3>
               <p className="text-sm text-slate-400 font-medium">전문심리상담기관</p>
             </div>
           </div>
