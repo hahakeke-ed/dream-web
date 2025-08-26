@@ -1,8 +1,8 @@
-
 'use client';
 
 import Link from 'next/link';
 import { useState, useRef } from 'react';
+import SmsButton from '../components/SmsButton';
 
 export default function Home() {
   const [activeTooltip, setActiveTooltip] = useState<string | null>(null);
@@ -13,7 +13,7 @@ export default function Home() {
       id: 'home',
       name: '홈',
       href: '/',
-      description: '드림심리상담센터 메인 페이지입니다. 전체적인 서비스紹介와 상담 프로그램을 확인할 수 있습니다.'
+      description: '드림심리상담센터 메인 페이지입니다. 전체적인 서비스 소개와 상담 프로그램을 확인할 수 있습니다.'
     },
     {
       id: 'counseling',
@@ -58,7 +58,7 @@ export default function Home() {
     const menuIndex = menuItems.findIndex(item => item.id === menuId);
     if (menuIndex === -1) return 'left-8';
 
-    // 各メニュー別に位置を計算
+    // 각 메뉴별 위치 계산
     const positions = ['left-6', 'left-28', 'left-56', 'left-96', 'left-[140px]'];
     return positions[menuIndex] || 'left-6';
   };
@@ -326,7 +326,7 @@ export default function Home() {
               <div>
                 <img 
                   src="https://static.readdy.ai/image/7b8785b3350666cb22c8ef9ed87331b2/2cb60c42fc8d3c54ec27f2a879dd86e0.png"
-                  alt="전국민마음투자支持사업 안내"
+                  alt="전국민마음투자지원사업 안내"
                   className="w-full h-auto rounded-2xl object-cover object-top shadow-2xl border border-slate-700"
                 />
               </div>
@@ -594,13 +594,24 @@ export default function Home() {
         <div className="max-w-6xl mx-auto text-center">
           <h2 className="text-3xl font-bold text-slate-100 mb-8">상담 예약</h2>
           <div className="grid md:grid-cols-3 gap-8">
-            <div className="bg-slate-800 p-8 rounded-2xl border border-slate-600">
+
+            {/* 문자 상담 (전화 카드 대체) */}
+            <div className="bg-slate-800 p-8 rounded-2xl border border-slate-600 hover:border-amber-400 transition">
               <div className="w-16 h-16 bg-amber-600 rounded-2xl flex items-center justify-center mx-auto mb-6">
-                <i className="ri-phone-line text-white text-2xl"></i>
+                <svg width="26" height="26" viewBox="0 0 24 24" fill="none" aria-hidden>
+                  <path d="M4 4h16v12H7l-3 3V4z" stroke="white" strokeWidth="1.5" />
+                </svg>
               </div>
-              <h3 className="text-xl font-bold text-slate-100 mb-4">전화 예약</h3>
-              <p className="text-slate-400 mb-4">직접 전화를 통한 상담 예약 및 문의</p>
-              <p className="text-2xl font-bold text-amber-400">053-759-1282</p>
+              <h3 className="text-xl font-bold text-slate-100 mb-4">문자 상담</h3>
+              <p className="text-slate-400 mb-4">바로 문의 내용을 보내세요</p>
+              <div className="flex justify-center">
+                <SmsButton body="안녕하세요. [이름/희망시간/상담유형] 남깁니다.">
+                  문자 보내기
+                </SmsButton>
+              </div>
+              <p className="text-xs text-center text-slate-400 mt-3">
+                PC에서는 번호와 내용이 복사됩니다. 휴대폰에서 전송해주세요.
+              </p>
             </div>
 
             <div className="bg-slate-800 p-8 rounded-2xl border border-slate-600">
