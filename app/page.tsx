@@ -25,7 +25,7 @@ export default function Home() {
       id: 'psychological-test',
       name: '심리검사',
       href: '/psychological-test',
-      description: '임상심리전문가(한국심리학회 임상심리사 1급)가 직접 시행하는 종합심리검사(full battery 검사)를 통해 개인의 강점과 특성, 위험요인을 정확히 발견합니다. 임상 장면과 동일한 자격자가 동일한 검사를 시행하며 충분한 해석상담을 받을 수 있습니다.'
+      description: '임상심리전문가(한국심리학회 임상심리전문가)가 직접 시행하는 종합심리검사(full battery 검사)를 통해 개인의 강점과 특성, 위험요인을 정확히 발견합니다. 임상 장면과 동일한 자격자가 동일한 검사를 시행하며 충분한 해석상담을 받을 수 있습니다.'
     },
     {
       id: 'national-support',
@@ -66,7 +66,7 @@ export default function Home() {
                 className="w-12 h-12 object-cover object-top rounded-lg"
               />
               <div className="flex flex-col">
-                <h1 className="text-2xl font-[\'Pacifico\'] text-amber-400 leading-tight">드림심리상담센터</h1>
+                <h1 className="text-2xl font-['Pacifico'] text-amber-400 leading-tight">드림심리상담센터</h1>
                 <p className="text-sm text-slate-400 font-medium">전문심리상담기관</p>
               </div>
             </div>
@@ -303,7 +303,7 @@ export default function Home() {
 
       {/* National Mind Investment Support Program Section */}
       <section className="py-20 px-4 bg-gradient-to-br from-blue-900/20 to-indigo-900/30">
-        <div className="max-w-6xl mx_auto">
+        <div className="max-w-6xl mx-auto">{/* ← 가운데 정렬 복구(mx-auto) */}
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-slate-100 mb-4">전국민마음투자지원사업</h2>
             <p className="text-lg text-slate-400">-정부 지원 사업으로 부담없이 전문 심리상담을 받으실 수 있습니다</p>
@@ -340,7 +340,7 @@ export default function Home() {
 
                   <div className="flex items-start space-x-4">
                     <div className="w-8 h-8 bg-emerald-600 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
-                      <i className="ri-shield-check-line text-white text_sm"></i>
+                      <i className="ri-shield-check-line text-white text-sm"></i>
                     </div>
                     <div>
                       <h4 className="text-xl font-semibold text-slate-200 mb-2">전문가 자격 보장</h4>
@@ -359,39 +359,45 @@ export default function Home() {
                   </div>
 
                   <div className="mt-8 pt-8 border-t border-slate-700">
+                    {/* 상단 영역 -신청 방법 안내 */}
                     <div className="mb-6">
                       <p className="text-slate-400 leading-relaxed">
                         학교, 정신건강복지센터, 청소년상담복지센터, 병의원 의뢰서 등을 통해 신청하거나 
                         직접 센터로 문의하시면 자세한 안내를 받으실 수 있습니다.
                       </p>
                     </div>
+                    {/* 하단 영역 - 2개 섹션 */}
                     <div className="grid md:grid-cols-2 gap-6">
+                      {/* 좌측 - 서비스 유형 안내 */}
                       <div>
                         <p className="text-slate-300 font-semibold border border-slate-600 bg-slate-700/50 p-4 rounded-xl">
                           본 센터는 1급, 2급 유형의 서비스를 제공함
                         </p>
                       </div>
+                      {/* 우측 - 카카오톡 전용 문의 */}
                       <div className="flex flex-col items-center justify-center space-y-3">
-                        <div className="w-20 h-20 bg-amber-600 rounded-2xl flex items-center justify-center shadow-lg">
-                          <i className="ri-chat-3-fill text-white text-xl"></i>
-                        </div>
-                        <p className="text-xs text-slate-400 text-center">
-                          문자 예약으로 빠르게 문의하세요
-                        </p>
-                        <SmsButton
-                          className="bg-amber-600 border-amber-600 text-white hover:bg-amber-500 hover:border-amber-500"
-                          body="안녕하세요. [이름/희망시간/상담유형] 남깁니다."
+                        <a 
+                          href="https://pf.kakao.com/_NxbxnRn" 
+                          target="_blank" 
+                          rel="noopener noreferrer"
+                          className="bg-gradient-to-r from-yellow-400 to-yellow-500 text-black w-20 h-20 rounded-2xl font-bold hover:from-yellow-300 hover:to-yellow-400 transition-all transform hover:scale-105 shadow-lg flex flex-col items-center justify-center cursor-pointer"
                         >
-                          문자 예약
-                        </SmsButton>
+                          <i className="ri-chat-3-fill text-xl mb-1"></i>
+                          <div className="text-xs font-medium text-center leading-tight">
+                            전용 문의
+                          </div>
+                        </a>
+                        <p className="text-xs text-slate-400 text-center">
+                          전국민마음투자지원사업 전용 문의
+                        </p>
                       </div>
                     </div>
                   </div>
                 </div>
-              </div>
-            </div>
-          </div>
-        </div>
+              </div>{/* col */}
+            </div>{/* grid */}
+          </div>{/* card */}
+        </div>{/* container */}
       </section>
 
       {/* Mind Magnifier Service Section */}
@@ -431,6 +437,16 @@ export default function Home() {
 
                 <div className="space-y-4">
                   <div className="flex items-start space-x-4">
+                    <div className="w-8 h-8 bg-purple-600 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                      <i className="ri-brain-line text-white text-sm"></i>
+                    </div>
+                    <div>
+                      <h4 className="text-xl font-semibold text-slate-200 mb-2">종합심리검사 실시</h4>
+                      <p className="text-slate-400">지능, 정서, 심리 요인 등을 종합적으로 평가하는 전문 검사</p>
+                    </div>
+                  </div>
+
+                  <div className="flex items-start space-x-4">
                     <div className="w-8 h-8 bg-pink-600 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
                       <i className="ri-user-star-line text-white text-sm"></i>
                     </div>
@@ -441,7 +457,7 @@ export default function Home() {
                   </div>
 
                   <div className="flex items-start space-x-4">
-                    <div className="w-8 h-8 bg-indigo-600 rounded-full flex items_center justify_center flex-shrink-0 mt-1">
+                    <div className="w-8 h-8 bg-indigo-600 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
                       <i className="ri-chat-heart-line text-white text-sm"></i>
                     </div>
                     <div>
@@ -470,10 +486,10 @@ export default function Home() {
                     </div>
                   </div>
                 </div>
-              </div>
-            </div>
-          </div>
-        </div>
+              </div>{/* col */}
+            </div>{/* grid */}
+          </div>{/* card */}
+        </div>{/* container */}
       </section>
 
       {/* Process Infographic */}
@@ -485,7 +501,7 @@ export default function Home() {
           </div>
 
           <div className="grid md:grid-cols-2 gap-12">
-            {/* Step 1: Service Application */}
+            {/* Step 1 */}
             <div className="bg-gradient-to-br from-slate-800 to-gray-800 p-8 rounded-2xl border border-slate-700">
               <div className="flex items-center space-x-6">
                 <div className="w-16 h-16 bg-amber-600 rounded-full flex items-center justify-center flex-shrink-0">
@@ -527,7 +543,7 @@ export default function Home() {
               </div>
             </div>
 
-            {/* Step 2: Service Utilization */}
+            {/* Step 2 */}
             <div className="bg-gradient-to-br from-slate-800 to-gray-800 p-8 rounded-2xl border border-slate-700">
               <div className="flex items-center space-x-6">
                 <div className="w-16 h-16 bg-emerald-600 rounded-full flex items-center justify-center flex-shrink-0">
@@ -535,9 +551,7 @@ export default function Home() {
                 </div>
                 <div className="flex-1">
                   <h3 className="text-2xl font-bold text-slate-100 mb-4">서비스 이용</h3>
-                  <p className="text-slate-300 mb-6">
-                    상담 유형에 따라 소요시간이 다릅니다
-                  </p>
+                  <p className="text-slate-300 mb-6">상담 유형에 따라 소요시간이 다릅니다</p>
                   <div className="space-y-3">
                     <div className="flex items-start space-x-3">
                       <div className="w-6 h-6 bg-emerald-600 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
@@ -569,7 +583,7 @@ export default function Home() {
                   </div>
                 </div>
               </div>
-            </div>
+            </div>{/* step2 */}
           </div>
         </div>
       </section>
@@ -579,7 +593,7 @@ export default function Home() {
         <div className="max-w-6xl mx-auto text-center">
           <h2 className="text-3xl font-bold text-slate-100 mb-8">상담 예약</h2>
 
-          <div className="grid md:grid-cols-2 gap-8">
+        <div className="grid md:grid-cols-2 gap-8">
             {/* 문자 예약 */}
             <div className="bg-slate-800 p-8 rounded-2xl border border-slate-600 hover:border-amber-400 transition">
               <div className="w-16 h-16 bg-amber-600 rounded-2xl flex items-center justify-center mx-auto mb-6">
@@ -635,7 +649,7 @@ export default function Home() {
               className="w-10 h-10 object-cover object-top rounded-lg"
             />
             <div className="flex flex-col">
-              <h3 className="text-2xl font-[\'Pacifico\'] text-amber-400 leading-tight">드림심리상담센터</h3>
+              <h3 className="text-2xl font-['Pacifico'] text-amber-400 leading-tight">드림심리상담센터</h3>
               <p className="text-sm text-slate-400 font-medium">전문심리상담기관</p>
             </div>
           </div>
