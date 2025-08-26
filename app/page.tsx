@@ -148,7 +148,7 @@ export default function Home() {
                 </div>
                 <div className="flex items-center space-x-3">
                   <div className="w-2 h-2 bg-amber-400 rounded-full"></div>
-                  <span className="text-slate-300">한국심리학회 임상심리사 1급</span>
+                  <span className="text-slate-300">한국심리학회 임상심리전문가가</span>
                 </div>
                 <div className="flex items-center space-x-3">
                   <div className="w-2 h-2 bg-amber-400 rounded-full"></div>
