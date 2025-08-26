@@ -1,85 +1,56 @@
-"use client";
+'use client';
 
-import { useMemo, useState } from "react";
+import React, { useState } from 'react';
 
-type Props = {
-  /** 휴대폰 번호. 예) "01075691282" 또는 "+821075691282" */
-  phone?: string;
-  /** 미리 채워둘 문자 내용 */
+type SmsButtonProps = {
+  children: React.ReactNode;
   body?: string;
   className?: string;
-  children?: React.ReactNode; // 버튼 라벨
+  phone?: string;
 };
 
-function isMobileUA() {
-  if (typeof navigator === "undefined") return false;
-  return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini|Mobi/i.test(
-    navigator.userAgent
-  );
-}
-
-function isIOS() {
-  if (typeof navigator === "undefined") return false;
-  return /iPad|iPhone|iPod/.test(navigator.userAgent);
-}
-
-function normalizeKR(number: string) {
-  // "+82" 또는 "0"으로 시작하는 한국 번호를 E.164로 정리
-  let n = number.replace(/[^\d+]/g, "");
-  if (n.startsWith("+")) return n;
-  if (n.startsWith("0")) return "+82" + n.substring(1);
-  return n;
-}
-
-function buildSmsHref(number: string, body?: string) {
-  const to = normalizeKR(number);
-  if (!body) return `sms:${to}`;
-  const encoded = encodeURIComponent(body);
-  // iOS는 &body, Android는 ?body 사용이 호환성 좋음
-  const sep = isIOS() ? "&" : "?";
-  return `sms:${to}${sep}body=${encoded}`;
-}
+const PHONE_DEFAULT = '01075691282';
 
 export default function SmsButton({
-  phone = "01075691282", // ← 요청하신 기본 번호
-  body = "안녕하세요. 상담 문의드립니다. [이름/희망시간/상담유형] 남깁니다.",
-  className = "",
-  children = "문자 보내기",
-}: Props) {
+  children,
+  body = '',
+  className = '',
+  phone = PHONE_DEFAULT,
+}: SmsButtonProps) {
   const [copied, setCopied] = useState(false);
-  const href = useMemo(() => buildSmsHref(phone, body), [phone, body]);
-  const mobile = useMemo(() => isMobileUA(), []);
+  const finalBody = encodeURIComponent(body);
 
-  const handleCopy = async () => {
+  const handleClick = async () => {
+    const isiOS = /iPad|iPhone|iPod/i.test(navigator.userAgent);
+    const sep = isiOS ? '&' : '?';
+    const scheme = `sms:${phone}${sep}body=${finalBody}`;
+
+    // 모바일은 문자 앱 열기
+    if (/Android|iPhone|iPad|iPod/i.test(navigator.userAgent)) {
+      window.location.href = scheme;
+      return;
+    }
+
+    // 데스크톱은 복사
     try {
-      await navigator.clipboard.writeText(`${phone}\n\n${body}`);
+      await navigator.clipboard.writeText(`${phone}\n${decodeURIComponent(finalBody)}`);
       setCopied(true);
-      setTimeout(() => setCopied(false), 1600);
-    } catch {}
+      setTimeout(() => setCopied(false), 2500);
+    } catch {
+      // 복사 실패 시 문자 앱 시도
+      window.location.href = scheme;
+    }
   };
 
-  if (mobile) {
-    // 모바일: 문자 앱 열기
-    return (
-      <a
-        href={href}
-        className={`inline-flex items-center justify-center rounded-2xl px-5 py-3 text-base font-semibold border border-slate-600 bg-slate-800 hover:border-amber-400 transition ${className}`}
-        aria-label="문자 앱 열기"
-      >
-        {children}
-      </a>
-    );
-  }
+  // 통일된 주황색(amber) 버튼 스타일 고정
+  const base =
+    'inline-flex items-center justify-center px-6 py-3 rounded-xl font-bold shadow-md border transition ' +
+    'bg-amber-600 text-white border-amber-600 hover:bg-amber-500 hover:border-amber-500 ' +
+    'focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-amber-500';
 
-  // 데스크톱: 번호+내용 복사로 폴백
   return (
-    <button
-      onClick={handleCopy}
-      className={`inline-flex items-center justify-center rounded-2xl px-5 py-3 text-base font-semibold border border-slate-600 bg-slate-800 hover:border-amber-400 transition ${className}`}
-      title="PC에서는 문자 앱이 열리지 않아요. 번호와 내용을 복사했습니다. 휴대폰에서 보내주세요."
-    >
-      {copied ? "복사됨!" : children}
+    <button type="button" onClick={handleClick} className={`${base} ${className}`}>
+      {copied ? '복사됨' : children}
     </button>
   );
 }
-
