@@ -76,7 +76,7 @@ export default function Home() {
                 className="w-12 h-12 object-cover object-top rounded-lg"
               />
               <div className="flex flex-col">
-                <h1 className="text-2xl font-[\'Pacifico\'] text-amber-400 leading-tight">드림심리상담센터</h1>
+                <h1 className="text-2xl font-['Pacifico'] text-amber-400 leading-tight">드림심리상담센터</h1>
                 <p className="text-sm text-slate-400 font-medium">전문심리상담기관</p>
               </div>
             </div>
@@ -386,22 +386,20 @@ export default function Home() {
                           본 센터는 1급, 2급 유형의 서비스를 제공함
                         </p>
                       </div>
-                      {/* 우측 - 카카오톡 문의 */}
+                      {/* 우측 - 문자 예약 안내 */}
                       <div className="flex flex-col items-center justify-center space-y-3">
-                        <a 
-                          href="https://pf.kakao.com/_NxbxnRn" 
-                          target="_blank" 
-                          rel="noopener noreferrer"
-                          className="bg-gradient-to-r from-yellow-400 to-yellow-500 text-black w-20 h-20 rounded-2xl font-bold hover:from-yellow-300 hover:to-yellow-400 transition-all transform hover:scale-105 shadow-lg flex flex-col items-center justify-center cursor-pointer"
-                        >
-                          <i className="ri-chat-3-fill text-xl mb-1"></i>
-                          <div className="text-xs font-medium text-center leading-tight">
-                            전용 문의
-                          </div>
-                        </a>
+                        <div className="w-20 h-20 bg-amber-600 rounded-2xl flex items-center justify-center shadow-lg">
+                          <i className="ri-chat-3-fill text-white text-xl"></i>
+                        </div>
                         <p className="text-xs text-slate-400 text-center">
-                          전국민마음투자지원사업 전용 문의
+                          문자 예약으로 빠르게 문의하세요
                         </p>
+                        <SmsButton
+                          className="bg-amber-600 border-amber-600 text-white hover:bg-amber-500 hover:border-amber-500"
+                          body="안녕하세요. [이름/희망시간/상담유형] 남깁니다."
+                        >
+                          문자 예약
+                        </SmsButton>
                       </div>
                     </div>
                   </div>
@@ -508,78 +506,90 @@ export default function Home() {
       <section className="py-20 px-4 bg-gradient-to-br from-gray-900 to-slate-900">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-slate-100 mb-4">서비스 이용절차</h2>
+            <h2 className="text-4xl font-bold text-slate-100">서비스 이용절차</h2>
             <p className="text-lg text-slate-400">1:1 예약서비스로 체계적이고 전문적인 상담을 제공합니다</p>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-12">
-            {/* Step 1: Service Application */}
-            <div className="bg-gradient-to-br from-slate-800 to-gray-800 p-8 rounded-2xl border border-slate-700">
-              <div className="flex items-center space-x-6">
-                <div className="w-16 h-16 bg-amber-600 rounded-full flex items-center justify-center flex-shrink-0">
-                  <span className="text-white text-2xl font-bold">1</span>
-                </div>
-                <div className="flex-1">
-                  <h3 className="text-2xl font-bold text-slate-100 mb-4">서비스 신청</h3>
-                  <p className="text-slate-300 mb-6">
-                    현재 1:1 예약서비스이므로 반드시 전화나 카카오톡채널을 통해 예약해야 합니다
-                  </p>
-                  <div className="space-y-3">
-                    <div className="flex items-center space-x-3">
-                      <div className="w-6 h-6 bg-amber-600 rounded-full flex items-center justify-center">
-                        <i className="ri-phone-line text-white text-sm"></i>
-                      </div>
-                      <span className="text-slate-300">전화 예약: 053-759-1282</span>
+        <div className="grid md:grid-cols-2 gap-12">
+          {/* Step 1: Service Application */}
+          <div className="bg-gradient-to-br from-slate-800 to-gray-800 p-8 rounded-2xl border border-slate-700">
+            <div className="flex items-center space-x-6">
+              <div className="w-16 h-16 bg-amber-600 rounded-full flex items-center justify-center flex-shrink-0">
+                <span className="text-white text-2xl font-bold">1</span>
+              </div>
+              <div className="flex-1">
+                <h3 className="text-2xl font-bold text-slate-100 mb-4">서비스 신청</h3>
+                <p className="text-slate-300 mb-6">
+                  현재 1:1 예약서비스이므로 반드시 전화 또는 문자 예약을 통해 신청해 주세요.
+                </p>
+                <div className="space-y-4">
+                  <div className="flex items-center space-x-3">
+                    <div className="w-6 h-6 bg-amber-600 rounded-full flex items-center justify-center">
+                      <i className="ri-phone-line text-white text-sm"></i>
                     </div>
-                    <div className="flex items-center space-x-3">
+                    <span className="text-slate-300">전화 예약: 053-759-1282</span>
+                  </div>
+
+                  {/* 문자 예약 CTA */}
+                  <div>
+                    <div className="flex items-center space-x-3 mb-3">
                       <div className="w-6 h-6 bg-amber-600 rounded-full flex items-center justify-center">
                         <i className="ri-chat-3-line text-white text-sm"></i>
                       </div>
-                      <span className="text-slate-300">카카오톡: @드림심리상담센터</span>
+                      <span className="text-slate-300 font-medium">문자 예약</span>
                     </div>
+                    <SmsButton
+                      className="bg-amber-600 border-amber-600 text-white hover:bg-amber-500 hover:border-amber-500"
+                      body="안녕하세요. [이름/희망시간/상담유형] 남깁니다."
+                    >
+                      문자 예약
+                    </SmsButton>
+                    <p className="text-xs text-slate-500 mt-2">
+                      PC에서는 번호와 내용이 복사됩니다. 휴대폰에서 전송해주세요.
+                    </p>
                   </div>
                 </div>
               </div>
             </div>
+          </div>
 
-            {/* Step 2: Service Utilization */}
-            <div className="bg-gradient-to-br from-slate-800 to-gray-800 p-8 rounded-2xl border border-slate-700">
-              <div className="flex items-center space-x-6">
-                <div className="w-16 h-16 bg-emerald-600 rounded-full flex items-center justify-center flex-shrink-0">
-                  <span className="text-white text-2xl font-bold">2</span>
-                </div>
-                <div className="flex-1">
-                  <h3 className="text-2xl font-bold text-slate-100 mb-4">서비스 이용</h3>
-                  <p className="text-slate-300 mb-6">
-                    상담 유형에 따라 소요시간이 다릅니다
-                  </p>
-                  <div className="space-y-3">
-                    <div className="flex items-start space-x-3">
-                      <div className="w-6 h-6 bg-emerald-600 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
-                        <i className="ri-user-3-line text-white text-sm"></i>
-                      </div>
-                      <div>
-                        <span className="text-slate-300 font-medium">개인상담</span>
-                        <p className="text-slate-400 text-sm">50분 기준</p>
-                      </div>
+          {/* Step 2: Service Utilization */}
+          <div className="bg-gradient-to-br from-slate-800 to-gray-800 p-8 rounded-2xl border border-slate-700">
+            <div className="flex items-center space-x-6">
+              <div className="w-16 h-16 bg-emerald-600 rounded-full flex items-center justify-center flex-shrink-0">
+                <span className="text-white text-2xl font-bold">2</span>
+              </div>
+              <div className="flex-1">
+                <h3 className="text-2xl font-bold text-slate-100 mb-4">서비스 이용</h3>
+                <p className="text-slate-300 mb-6">
+                  상담 유형에 따라 소요시간이 다릅니다
+                </p>
+                <div className="space-y-3">
+                  <div className="flex items-start space-x-3">
+                    <div className="w-6 h-6 bg-emerald-600 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
+                      <i className="ri-user-3-line text-white text-sm"></i>
                     </div>
-                    <div className="flex items-start space-x-3">
-                      <div className="w-6 h-6 bg-emerald-600 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
-                        <i className="ri-group-line text-white text-sm"></i>
-                      </div>
-                      <div>
-                        <span className="text-slate-300 font-medium">부부상담, 가족상담</span>
-                        <p className="text-slate-400 text-sm">90분 기준</p>
-                      </div>
+                    <div>
+                      <span className="text-slate-300 font-medium">개인상담</span>
+                      <p className="text-slate-400 text-sm">50분 기준</p>
                     </div>
-                    <div className="flex items-start space-x-3">
-                      <div className="w-6 h-6 bg-emerald-600 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
-                        <i className="ri-clipboard-line text-white text-sm"></i>
-                      </div>
-                      <div>
-                        <span className="text-slate-300 font-medium">종합심리검사 (Full Battery)</span>
-                        <p className="text-slate-400 text-sm">검사시행 3~4시간(임상심리전문가)<br />해석상담 1시간(상담심리전문가)</p>
-                      </div>
+                  </div>
+                  <div className="flex items-start space-x-3">
+                    <div className="w-6 h-6 bg-emerald-600 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
+                      <i className="ri-group-line text-white text-sm"></i>
+                    </div>
+                    <div>
+                      <span className="text-slate-300 font-medium">부부상담, 가족상담</span>
+                      <p className="text-slate-400 text-sm">90분 기준</p>
+                    </div>
+                  </div>
+                  <div className="flex items-start space-x-3">
+                    <div className="w-6 h-6 bg-emerald-600 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
+                      <i className="ri-clipboard-line text-white text-sm"></i>
+                    </div>
+                    <div>
+                      <span className="text-slate-300 font-medium">종합심리검사 (Full Battery)</span>
+                      <p className="text-slate-400 text-sm">검사시행 3~4시간(임상심리전문가)<br />해석상담 1시간(상담심리전문가)</p>
                     </div>
                   </div>
                 </div>
@@ -593,20 +603,24 @@ export default function Home() {
       <section className="py-20 px-4">
         <div className="max-w-6xl mx-auto text-center">
           <h2 className="text-3xl font-bold text-slate-100 mb-8">상담 예약</h2>
-          <div className="grid md:grid-cols-3 gap-8">
 
-            {/* 문자 상담 (전화 카드 대체) */}
+          {/* 2개 카드 배치: 문자 예약 + 찾아오시는 길 */}
+          <div className="grid md:grid-cols-2 gap-8">
+            {/* 문자 예약 */}
             <div className="bg-slate-800 p-8 rounded-2xl border border-slate-600 hover:border-amber-400 transition">
               <div className="w-16 h-16 bg-amber-600 rounded-2xl flex items-center justify-center mx-auto mb-6">
                 <svg width="26" height="26" viewBox="0 0 24 24" fill="none" aria-hidden>
                   <path d="M4 4h16v12H7l-3 3V4z" stroke="white" strokeWidth="1.5" />
                 </svg>
               </div>
-              <h3 className="text-xl font-bold text-slate-100 mb-4">문자 상담</h3>
+              <h3 className="text-xl font-bold text-slate-100 mb-4">문자 예약</h3>
               <p className="text-slate-400 mb-4">바로 문의 내용을 보내세요</p>
               <div className="flex justify-center">
-                <SmsButton body="안녕하세요. [이름/희망시간/상담유형] 남깁니다.">
-                  문자 보내기
+                <SmsButton
+                  className="bg-amber-600 border-amber-600 text-white hover:bg-amber-500 hover:border-amber-500"
+                  body="안녕하세요. [이름/상담유형/희망날짜] 남깁니다."
+                >
+                  문자 예약
                 </SmsButton>
               </div>
               <p className="text-xs text-center text-slate-400 mt-3">
@@ -614,15 +628,7 @@ export default function Home() {
               </p>
             </div>
 
-            <div className="bg-slate-800 p-8 rounded-2xl border border-slate-600">
-              <div className="w-16 h-16 bg-yellow-400 rounded-2xl flex items-center justify-center mx-auto mb-6">
-                <i className="ri-chat-3-fill text-white text-2xl"></i>
-              </div>
-              <h3 className="text-xl font-bold text-slate-100 mb-4">카카오채널 예약</h3>
-              <p className="text-slate-400 mb-4">카카오 채널 예약 문의</p>
-              <p className="text-xl font-bold text-yellow-400">@드림심리상담센터</p>
-            </div>
-
+            {/* 찾아오시는 길 */}
             <div className="bg-slate-800 p-8 rounded-2xl border border-slate-600">
               <div className="w-16 h-16 bg-green-600 rounded-2xl flex items-center justify-center mx-auto mb-6">
                 <i className="ri-map-pin-2-line text-white text-2xl"></i>
@@ -655,13 +661,13 @@ export default function Home() {
               className="w-10 h-10 object-cover object-top rounded-lg"
             />
             <div className="flex flex-col">
-              <h3 className="text-2xl font-[\'Pacifico\'] text-amber-400 leading-tight">드림심리상담센터</h3>
+              <h3 className="text-2xl font-['Pacifico'] text-amber-400 leading-tight">드림심리상담센터</h3>
               <p className="text-sm text-slate-400 font-medium">전문심리상담기관</p>
             </div>
           </div>
           <p className="text-slate-400 mb-8">전문적이고 따뜻한 심리상담으로 당신의 마음을 돌봅니다.</p>
           <div className="border-t border-slate-800 pt-8">
-            <p className="text-slate-500">&copy; 2024 드림심리상담센터. All rights reserved.</p>
+            <p className="text-slate-500">&copy; 2011 드림심리상담센터. All rights reserved.</p>
           </div>
         </div>
       </footer>
