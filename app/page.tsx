@@ -3,6 +3,7 @@
 import Link from 'next/link';
 import { useState, useRef } from 'react';
 import SmsButton from '../components/SmsButton';
+import { SHOW_MIND_SERVICE } from '../lib/siteFlags';
 
 export default function Home() {
   const [activeTooltip, setActiveTooltip] = useState<string | null>(null);
@@ -399,7 +400,7 @@ export default function Home() {
           </div>{/* card */}
         </div>{/* container */}
       </section>
-
+{SHOW_MIND_SERVICE && (
       {/* Mind Magnifier Service Section */}
       <section className="py-20 px-4 bg-gradient-to-br from-purple-900/20 to-pink-900/30">
         <div className="max-w-6xl mx-auto">
@@ -491,7 +492,7 @@ export default function Home() {
           </div>{/* card */}
         </div>{/* container */}
       </section>
-
+)}
       {/* Process Infographic */}
       <section className="py-20 px-4 bg-gradient-to-br from-gray-900 to-slate-900">
         <div className="max-w-7xl mx-auto">
