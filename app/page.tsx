@@ -30,7 +30,7 @@ export default function Home() {
     },
     {
       id: 'national-support',
-      name: '정신건강심리상담바우처처',
+      name: '정신건강심리상담바우처',
       href: '/national-support',
       description: '우울, 불안 등 정서적 어려움을 겪는 국민들에게 전문적인 심리상담 서비스를 제공하는 정부 사업입니다. 학교나 정신건강복지센터, 청소년상담복지센터, 병의원 의뢰서 등을 통해신청할 수 있습니다.'
     },
