@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import Image from "next/image"; // 로고 이미지를 쓰기 위해 필요
+import Image from "next/image";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -15,70 +15,69 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ko">
-      <body className="antialiased bg-white text-gray-900 font-sans">
+      <body className="antialiased bg-white text-gray-900 font-sans flex flex-col min-h-screen">
         
-        {/* 통합된 최상단 네비게이션 (남색 스타일) */}
-        <header className="bg-[#111827] text-white">
+        {/* 상단 네비게이션 (기존 스타일: 남색 배경) */}
+        <header className="bg-[#111827] text-white border-b border-gray-800">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="flex justify-between items-center h-20">
+            <div className="flex justify-between items-center h-24">
               
-              {/* 1. 로고 영역 (기존 스타일 복원) */}
-              <div className="flex-shrink-0 flex items-center gap-3">
-                <Link href="/" className="flex items-center gap-2">
-                  {/* 로고 이미지가 있다면 사용, 없으면 텍스트 대체 */}
-                  <div className="bg-white p-1 rounded-md">
+              {/* 1. 로고 영역 */}
+              <div className="flex-shrink-0">
+                <Link href="/" className="flex items-center gap-3 group">
+                  {/* 로고 이미지 (배경 흰색 박스 처리) */}
+                  <div className="bg-white p-1.5 rounded-lg shadow-sm group-hover:opacity-90 transition-opacity">
                      <Image 
                        src="/dream_logo.png" 
                        alt="드림심리상담센터 로고" 
-                       width={40} 
-                       height={40} 
+                       width={45} 
+                       height={45} 
                        className="object-contain"
                      />
                   </div>
                   <div className="flex flex-col justify-center">
-                    <span className="text-xl font-bold text-orange-400 leading-tight">드림심리상담센터</span>
-                    <span className="text-xs text-gray-400">전문심리상담기관</span>
+                    <span className="text-xl font-bold text-orange-400 leading-tight tracking-tight">드림심리상담센터</span>
+                    <span className="text-xs text-gray-400 font-light tracking-wider">전문심리상담기관</span>
                   </div>
                 </Link>
               </div>
               
-              {/* 2. 메뉴 영역 (요청하신 순서대로 배치) */}
-              <nav className="hidden md:flex space-x-6 items-center">
-                <Link href="/" className="hover:text-orange-400 transition-colors font-medium">
+              {/* 2. 메뉴 영역 (요청하신 순서 적용) */}
+              <nav className="hidden xl:flex space-x-7 items-center text-[15px]">
+                <Link href="/" className="text-white hover:text-orange-400 transition-colors font-medium">
                   홈
                 </Link>
                 
-                {/* 요청 1: 홈과 심리상담 사이에 '센터소개' 배치 */}
-                <Link href="/about" className="hover:text-orange-400 transition-colors font-medium">
+                {/* 센터소개 (홈과 심리상담 사이) */}
+                <Link href="/about" className="text-gray-300 hover:text-orange-400 transition-colors font-medium">
                   센터소개
                 </Link>
 
-                {/* 기존 메뉴들 (페이지가 아직 없다면 링크만 걸어둠) */}
-                <Link href="/counseling" className="hover:text-orange-400 transition-colors font-medium">
+                <Link href="/counseling" className="text-gray-300 hover:text-orange-400 transition-colors font-medium">
                   심리상담
                 </Link>
                 
-                <Link href="/test" className="hover:text-orange-400 transition-colors font-medium">
+                <Link href="/test" className="text-gray-300 hover:text-orange-400 transition-colors font-medium">
                   심리검사
                 </Link>
 
-                {/* 요청 2: 이름 변경 및 바우처 페이지 연결 */}
-                <Link href="/program/voucher" className="hover:text-orange-400 transition-colors font-medium">
+                {/* 이름 변경: 전국민마음투자 -> 정신건강 심리상담 바우처 */}
+                <Link href="/program/voucher" className="text-orange-400 hover:text-orange-300 transition-colors font-bold">
                   정신건강 심리상담 바우처
                 </Link>
 
-                <Link href="/eap" className="hover:text-orange-400 transition-colors font-medium">
+                <Link href="/eap" className="text-gray-300 hover:text-orange-400 transition-colors font-medium">
                   EAP 기업심리상담
                 </Link>
                 
-                 <Link href="/notice" className="hover:text-orange-400 transition-colors font-medium">
+                 <Link href="/notice" className="text-gray-300 hover:text-orange-400 transition-colors font-medium">
                   공지사항
                 </Link>
               </nav>
 
               {/* 모바일 메뉴 버튼 (화면 작을 때) */}
-              <div className="md:hidden">
-                <Link href="/about" className="text-gray-300 hover:text-white">
+              <div className="xl:hidden">
+                <Link href="/about" className="p-2 text-gray-300 hover:text-white border border-gray-700 rounded-md">
                   MENU
                 </Link>
               </div>
@@ -87,16 +86,16 @@ export default function RootLayout({
         </header>
 
         {/* 메인 컨텐츠 영역 */}
-        <main className="min-h-screen">
+        <main className="flex-grow">
           {children}
         </main>
 
-        {/* 하단 푸터 */}
-        <footer className="bg-gray-100 border-t border-gray-200 mt-12 py-8">
-          <div className="max-w-7xl mx-auto px-4 text-center text-gray-500 text-sm">
-            <p className="font-bold text-gray-700 mb-2">드림심리상담센터</p>
-            <p>대구광역시 수성구 달구벌대로 (범어역 11번 출구)</p>
-            <p className="mt-2">© 2026 Dream Counseling Center. All rights reserved.</p>
+        {/* 하단 푸터 (남색 배경으로 통일) */}
+        <footer className="bg-[#111827] text-gray-400 py-10 border-t border-gray-800">
+          <div className="max-w-7xl mx-auto px-4 text-center">
+            <h2 className="text-lg font-bold text-orange-400 mb-3">드림심리상담센터</h2>
+            <p className="mb-2">대구광역시 수성구 달구벌대로 (범어역 11번 출구)</p>
+            <p className="text-sm text-gray-500">© 2026 Dream Counseling Center. All rights reserved.</p>
           </div>
         </footer>
       </body>
