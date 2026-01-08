@@ -30,7 +30,7 @@ export default function Home() {
     },
     {
       id: 'national-support',
-      name: '전국민마음투자지원사업',
+      name: '정신건강심리상담바우처처',
       href: '/national-support',
       description: '우울, 불안 등 정서적 어려움을 겪는 국민들에게 전문적인 심리상담 서비스를 제공하는 정부 사업입니다. 학교나 정신건강복지센터, 청소년상담복지센터, 병의원 의뢰서 등을 통해신청할 수 있습니다.'
     },
@@ -306,7 +306,7 @@ export default function Home() {
       <section className="py-20 px-4 bg-gradient-to-br from-blue-900/20 to-indigo-900/30">
         <div className="max-w-6xl mx-auto">{/* ← 가운데 정렬 복구(mx-auto) */}
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-slate-100 mb-4">전국민마음투자지원사업</h2>
+            <h2 className="text-4xl font-bold text-slate-100 mb-4">정신건강심리상담바우처</h2>
             <p className="text-lg text-slate-400">-정부 지원 사업으로 부담없이 전문 심리상담을 받으실 수 있습니다</p>
           </div>
 
@@ -315,7 +315,7 @@ export default function Home() {
               <div>
                 <img 
                   src="https://static.readdy.ai/image/7b8785b3350666cb22c8ef9ed87331b2/2cb60c42fc8d3c54ec27f2a879dd86e0.png"
-                  alt="전국민마음투자지원사업 안내"
+                  alt="정신건강심리상담바우처"
                   className="w-full h-auto rounded-2xl object-cover object-top shadow-2xl border border-slate-700"
                 />
               </div>
@@ -323,7 +323,7 @@ export default function Home() {
                 <div>
                   <h3 className="text-3xl font-bold text-slate-100 mb-6">정부 지원 심리상담 서비스</h3>
                   <p className="text-lg text-slate-300 leading-relaxed mb-8">
-                    드림심리상담센터는 <span className="text-blue-400 font-semibold">전국민마음투자지원사업 수행기관</span>으로 
+                    드림심리상담센터는 <span className="text-blue-400 font-semibold">정신건강심리상담바우처 수행기관</span>으로 
                     우울, 불안 등 정서적 어려움을 겪는 국민들에게 전문적인 심리상담 서비스를 제공합니다.
                   </p>
                 </div>
@@ -389,7 +389,7 @@ export default function Home() {
                           </div>
                         </a>
                         <p className="text-xs text-slate-400 text-center">
-                          전국민마음투자지원사업 전용 문의
+                          정신건강심리상담바우처 전용 문의
                         </p>
                       </div>
                     </div>
