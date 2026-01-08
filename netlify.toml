@@ -2,8 +2,45 @@
   command = "npm run build"
   publish = ".next"
 
-[build.environment]
-  NODE_VERSION = "20"
-
 [[plugins]]
   package = "@netlify/plugin-nextjs"
+
+# ── 보안 헤더 & CSP ────────────────────────────────────────────────────────────
+[[headers]]
+for = "/*"
+  [headers.values]
+  # 클릭재킹 방지
+  X-Frame-Options = "SAMEORIGIN"
+  # MIME 스니핑 방지
+  X-Content-Type-Options = "nosniff"
+  # 리퍼러 최소화
+  Referrer-Policy = "strict-origin-when-cross-origin"
+  # HTTPS 강제(HSTS) - HTTPS/인증서가 정상인 도메인에서만 유지하세요
+  Strict-Transport-Security = "max-age=31536000; includeSubDomains; preload"
+  # 필요 없는 브라우저 권한 OFF
+  Permissions-Policy = "geolocation=(), microphone=(), camera=(), payment=(), usb=()"
+  # 실전형 CSP (CDN/외부이미지 사용 고려)
+  # 외부 CSS/폰트를 cdnjs만 쓰고 있다면 그대로 사용.
+  # 외부 이미지를 계속 쓰면 img-src https: 유지. 모두 /public로 옮기면 'self'로 줄여도 됨.
+  Content-Security-Policy = """
+  default-src 'self';
+  script-src 'self' 'unsafe-inline' 'unsafe-eval';
+  style-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com;
+  img-src 'self' data: https:;
+  font-src 'self' data: https://cdnjs.cloudflare.com;
+  connect-src 'self';
+  frame-ancestors 'self';
+  base-uri 'self';
+  form-action 'self';
+  """
+
+# 정적 파일 캐시(변경 불가 해시 파일)
+[[headers]]
+for = "/_next/static/*"
+  [headers.values]
+  Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+for = "/public/*"
+  [headers.values]
+  Cache-Control = "public, max-age=31536000, immutable"
