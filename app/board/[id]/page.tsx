@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import { posts } from '../../lib/posts';
 import { notFound } from 'next/navigation';
 import Link from 'next/link';
