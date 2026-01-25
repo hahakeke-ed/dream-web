@@ -1,14 +1,28 @@
-// app/board/page.tsx
+'use client';
+
+import { useEffect, useState } from 'react';
 import Link from 'next/link';
-import { posts } from '../lib/posts';
+import { supabase } from '../lib/supabase';
 
 export default function BoardPage() {
+  const [posts, setPosts] = useState<any[]>([]);
+
+  useEffect(() => {
+    async function fetchPosts() {
+      const { data } = await supabase
+        .from('posts')
+        .select('*')
+        .order('created_at', { ascending: false });
+      if (data) setPosts(data);
+    }
+    fetchPosts();
+  }, []);
+
   return (
     <div className="max-w-4xl mx-auto py-12 px-4 relative">
-      {/* 관리자 글쓰기 버튼 (우측 상단 작게 배치) */}
-      <div className="absolute top-12 right-4">
-        <Link href="/board/write" className="text-xs text-gray-300 hover:text-gray-500 transition">
-          관리자 글쓰기
+      <div className="flex justify-between items-center mb-10 border-b pb-6">
+        <Link href="/" className="flex items-center text-gray-600 hover:text-[#002855] font-bold transition">
+          <span className="bg-gray-100 p-2 rounded-full mr-2">🏠</span> 홈으로
         </Link>
       </div>
 
@@ -16,13 +30,13 @@ export default function BoardPage() {
       
       <div className="grid gap-6">
         {posts.map((post) => (
-          <Link href={`/board/${post.id}`} key={post.id} className="group flex flex-col md:flex-row gap-6 p-4 rounded-xl border border-gray-100 hover:shadow-md transition bg-white">
-            <div className="w-full md:w-40 h-28 bg-gray-200 overflow-hidden rounded-lg flex-shrink-0">
+          <Link href={`/board/${post.id}`} key={post.id} className="group flex flex-col md:flex-row gap-6 p-5 rounded-xl border border-gray-100 hover:shadow-lg transition bg-white">
+            <div className="w-full md:w-48 h-32 bg-gray-100 overflow-hidden rounded-lg flex-shrink-0">
               <img src={post.thumbnail} alt={post.title} className="w-full h-full object-cover group-hover:scale-105 transition" />
             </div>
             <div className="flex flex-col justify-center">
-              <p className="text-sm text-gray-400 mb-1">{post.date}</p>
-              <h2 className="text-xl font-semibold text-gray-800 group-hover:text-orange-500 transition leading-snug">{post.title}</h2>
+              <p className="text-sm text-gray-400 mb-2">{new Date(post.created_at).toLocaleDateString()}</p>
+              <h2 className="text-xl font-bold text-gray-800 group-hover:text-orange-500 transition leading-snug">{post.title}</h2>
             </div>
           </Link>
         ))}
