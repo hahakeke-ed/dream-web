@@ -1,9 +1,10 @@
+import Link from 'next/link'; // <-- 이 줄이 빠져서 에러가 났습니다!
 import { posts } from '../lib/posts';
 
 export default function BoardPage() {
   return (
     <div className="max-w-4xl mx-auto py-12 px-4">
-      {/* 로고의 블루 컬러 톤 적용 */}
+      {/* 드림 로고의 짙은 네이비 컬러 적용 */}
       <h1 className="text-3xl font-bold text-center mb-10 text-[#002855]">소식 및 칼럼</h1>
       
       <div className="grid gap-6">
