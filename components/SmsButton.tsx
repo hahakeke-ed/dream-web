@@ -9,7 +9,7 @@ type SmsButtonProps = {
   phone?: string;
 };
 
-const PHONE_DEFAULT = '01075691282';
+const PHONE_DEFAULT = '01084969389';
 
 export default function SmsButton({
   children,
