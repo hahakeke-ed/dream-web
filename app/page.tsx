@@ -66,11 +66,11 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-4 py-4">
           <div className="flex justify-between items-center">
             <div className="flex items-center space-x-4">
-              {/* 새 로고 파일명으로 교체 (반드시 public 폴더 안에 업로드 필요) */}
+              {/* 하얀 배경(bg-white)과 여백 제거 완료 */}
               <img 
                 src="/new_logo (2).png" 
                 alt="드림심리상담센터 로고" 
-                className="h-12 w-auto object-contain bg-white px-2 py-1 rounded-lg"
+                className="h-12 w-auto object-contain"
               />
               <div className="flex flex-col">
                 <h1 className="text-2xl font-['Pacifico'] text-amber-400 leading-tight">드림심리상담센터</h1>
@@ -580,7 +580,6 @@ export default function Home() {
                 <div className="flex-1">
                   <h3 className="text-2xl font-bold text-slate-100 mb-4">서비스 이용</h3>
                   <p className="text-slate-300 mb-6">상담 유형에 따라 소요시간이 다릅니다</p>
-                  {/* 항목이 줄어서 옆 박스와 높이를 맞추기 위해 space-y-6로 여백을 넓혔습니다 */}
                   <div className="space-y-6">
                     <div className="flex items-start space-x-3">
                       <div className="w-6 h-6 bg-emerald-600 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
@@ -663,11 +662,11 @@ export default function Home() {
       <footer className="bg-gray-900 text-white py-12 px-4 border-t border-slate-800">
         <div className="max-w-7xl mx-auto text-center">
           <div className="flex items-center justify-center space-x-4 mb-6">
-            {/* 하단 로고도 새 파일명으로 교체 */}
+            {/* 하단 로고에서도 하얀 배경(bg-white)과 여백 제거 완료 */}
             <img 
               src="/new_logo (2).png" 
               alt="드림심리상담센터 로고" 
-              className="h-10 w-auto object-contain bg-white px-2 py-1 rounded-lg"
+              className="h-10 w-auto object-contain"
             />
             <div className="flex flex-col">
               <h3 className="text-2xl font-['Pacifico'] text-amber-400 leading-tight">드림심리상담센터</h3>
