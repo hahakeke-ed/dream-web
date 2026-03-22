@@ -32,12 +32,7 @@ export default function Home() {
       href: '/counseling',
       description: '심리상담전문가(한국심리학회 상담심리사1급)와 1:1 심리상담을 통해 심리적 적응과 성장을 돕습니다.'
     },
-    {
-      id: 'psychological-test',
-      name: '심리검사',
-      href: '/psychological-test',
-      description: '임상심리전문가(한국심리학회 임상심리전문가)가 직접 시행하는 종합심리검사(full battery 검사)를 통해 개인의 강점과 특성, 위험요인을 정확히 발견합니다. 임상 장면과 동일한 자격자가 동일한 검사를 시행하며 충분한 해석상담을 받을 수 있습니다.'
-    },
+    // '심리검사' 메뉴 삭제됨
     {
       id: 'national-support',
       name: '정신건강심리상담바우처',
@@ -71,10 +66,11 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-4 py-4">
           <div className="flex justify-between items-center">
             <div className="flex items-center space-x-4">
+              {/* 실제 로고 이미지 교체 (public 폴더 내 dream_logo.png 사용) */}
               <img 
-                src="https://readdy.ai/api/search-image?query=professional%20psychology%20counseling%20center%20logo%20with%20brain%20and%20heart%20symbol%2C%20modern%20minimalist%20design%2C%20warm%20colors%20with%20blue%20and%20amber%20accents%2C%20mental%20health%20therapy%20icon%2C%20clean%20geometric%20style&width=60&height=60&seq=header-logo&orientation=squarish" 
+                src="/dream_logo.png" 
                 alt="드림심리상담센터 로고" 
-                className="w-12 h-12 object-cover object-top rounded-lg"
+                className="h-12 w-auto object-contain bg-white px-2 py-1 rounded-lg"
               />
               <div className="flex flex-col">
                 <h1 className="text-2xl font-['Pacifico'] text-amber-400 leading-tight">드림심리상담센터</h1>
@@ -134,7 +130,7 @@ export default function Home() {
         )}
       </header>
 
-      {/* Hero Section - 원래대로 복구됨 */}
+      {/* Hero Section */}
       <section 
         className="relative py-32 px-4 text-white min-h-screen flex items-center"
         style={{
@@ -153,7 +149,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Professional Features Section - 복구됨 */}
+      {/* Professional Features Section */}
       <section className="py-20 px-4 bg-gradient-to-br from-slate-800 to-gray-800">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
@@ -257,7 +253,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Services Section - 복구됨 */}
+      {/* Services Section */}
       <section className="py-20 px-4">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
@@ -333,7 +329,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* National Mind Investment Support Program Section - 복구됨 */}
+      {/* National Mind Investment Support Program Section */}
       <section className="py-20 px-4 bg-gradient-to-br from-blue-900/20 to-indigo-900/30">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
@@ -391,22 +387,18 @@ export default function Home() {
                   </div>
 
                   <div className="mt-8 pt-8 border-t border-slate-700">
-                    {/* 상단 영역 -신청 방법 안내 */}
                     <div className="mb-6">
                       <p className="text-slate-400 leading-relaxed">
                         학교, 정신건강복지센터, 청소년상담복지센터, 병의원 의뢰서 등을 통해 신청하거나 
                         직접 센터로 문의하시면 자세한 안내를 받으실 수 있습니다.
                       </p>
                     </div>
-                    {/* 하단 영역 - 2개 섹션 */}
                     <div className="grid md:grid-cols-2 gap-6">
-                      {/* 좌측 - 서비스 유형 안내 */}
                       <div>
                         <p className="text-slate-300 font-semibold border border-slate-600 bg-slate-700/50 p-4 rounded-xl">
                           본 센터는 1급, 2급 유형의 서비스를 제공함
                         </p>
                       </div>
-                      {/* 우측 - 카카오톡 전용 문의 */}
                       <div className="flex flex-col items-center justify-center space-y-3">
                         <a 
                           href="https://pf.kakao.com/_NxbxnRn" 
@@ -426,15 +418,15 @@ export default function Home() {
                     </div>
                   </div>
                 </div>
-              </div>{/* col */}
-            </div>{/* grid */}
-          </div>{/* card */}
-        </div>{/* container */}
+              </div>
+            </div>
+          </div>
+        </div>
       </section>
 
       {SHOW_MIND_SERVICE && (
         <>
-          {/* Mind Magnifier Service Section - 복구됨 */}
+          {/* Mind Magnifier Service Section */}
           <section className="py-20 px-4 bg-gradient-to-br from-purple-900/20 to-pink-900/30">
             <div className="max-w-6xl mx-auto">
               <div className="text-center mb-16">
@@ -520,15 +512,15 @@ export default function Home() {
                         </div>
                       </div>
                     </div>
-                  </div>{/* col */}
-                </div>{/* grid */}
-              </div>{/* card */}
-            </div>{/* container */}
+                  </div>
+                </div>
+              </div>
+            </div>
           </section>
         </>
       )}
 
-      {/* Process Infographic - 복구됨 */}
+      {/* Process Infographic */}
       <section className="py-20 px-4 bg-gradient-to-br from-gray-900 to-slate-900">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
@@ -588,7 +580,8 @@ export default function Home() {
                 <div className="flex-1">
                   <h3 className="text-2xl font-bold text-slate-100 mb-4">서비스 이용</h3>
                   <p className="text-slate-300 mb-6">상담 유형에 따라 소요시간이 다릅니다</p>
-                  <div className="space-y-3">
+                  {/* 항목이 줄어서 옆 박스와 높이를 맞추기 위해 space-y-6로 여백을 넓혔습니다 */}
+                  <div className="space-y-6">
                     <div className="flex items-start space-x-3">
                       <div className="w-6 h-6 bg-emerald-600 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
                         <i className="ri-user-3-line text-white text-sm"></i>
@@ -607,24 +600,15 @@ export default function Home() {
                         <p className="text-slate-400 text-sm">90분 기준</p>
                       </div>
                     </div>
-                    <div className="flex items-start space-x-3">
-                      <div className="w-6 h-6 bg-emerald-600 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
-                        <i className="ri-clipboard-line text-white text-sm"></i>
-                      </div>
-                      <div>
-                        <span className="text-slate-300 font-medium">종합심리검사 (Full Battery)</span>
-                        <p className="text-slate-400 text-sm">검사시행 3~4시간(임상심리전문가)<br />해석상담 1시간(상담심리전문가)</p>
-                      </div>
-                    </div>
                   </div>
                 </div>
               </div>
-            </div>{/* step2 */}
+            </div>
           </div>
         </div>
       </section>
 
-      {/* Contact Section - 복구됨 */}
+      {/* Contact Section */}
       <section className="py-20 px-4">
         <div className="max-w-6xl mx-auto text-center">
           <h2 className="text-3xl font-bold text-slate-100 mb-8">상담 예약</h2>
@@ -675,14 +659,15 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Footer - 복구됨 */}
+      {/* Footer */}
       <footer className="bg-gray-900 text-white py-12 px-4 border-t border-slate-800">
         <div className="max-w-7xl mx-auto text-center">
           <div className="flex items-center justify-center space-x-4 mb-6">
+            {/* 하단 로고도 진짜 로고로 교체 */}
             <img 
-              src="https://readdy.ai/api/search-image?query=professional%20psychology%20counseling%20center%20logo%20with%20brain%20and%20heart%20symbol%2C%20modern%20minimalist%20design%2C%20warm%20colors%20with%20blue%20and%20amber%20accents%2C%20mental%20health%20therapy%20icon%2C%20clean%20geometric%20style&width=60&height=60&seq=footer-logo&orientation=squarish" 
+              src="/dream_logo.png" 
               alt="드림심리상담센터 로고" 
-              className="w-10 h-10 object-cover object-top rounded-lg"
+              className="h-10 w-auto object-contain bg-white px-2 py-1 rounded-lg"
             />
             <div className="flex flex-col">
               <h3 className="text-2xl font-['Pacifico'] text-amber-400 leading-tight">드림심리상담센터</h3>
