@@ -66,9 +66,9 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-4 py-4">
           <div className="flex justify-between items-center">
             <div className="flex items-center space-x-4">
-              {/* 실제 로고 이미지 교체 (public 폴더 내 dream_logo.png 사용) */}
+              {/* 새 로고 파일명으로 교체 (반드시 public 폴더 안에 업로드 필요) */}
               <img 
-                src="/dream_logo.png" 
+                src="/new_logo (2).png" 
                 alt="드림심리상담센터 로고" 
                 className="h-12 w-auto object-contain bg-white px-2 py-1 rounded-lg"
               />
@@ -663,9 +663,9 @@ export default function Home() {
       <footer className="bg-gray-900 text-white py-12 px-4 border-t border-slate-800">
         <div className="max-w-7xl mx-auto text-center">
           <div className="flex items-center justify-center space-x-4 mb-6">
-            {/* 하단 로고도 진짜 로고로 교체 */}
+            {/* 하단 로고도 새 파일명으로 교체 */}
             <img 
-              src="/dream_logo.png" 
+              src="/new_logo (2).png" 
               alt="드림심리상담센터 로고" 
               className="h-10 w-auto object-contain bg-white px-2 py-1 rounded-lg"
             />
