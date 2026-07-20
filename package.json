@@ -10,15 +10,11 @@
     "postinstall": "next telemetry disable"
   },
   "dependencies": {
-    "@react-google-maps/api": "^2.19.3",
-    "@supabase/supabase-js": "^2.39.0",
-    "next": "latest",
-    "react": "^19.0.0",
-    "react-dom": "^19.0.0",
-    "recharts": "^3.0.2"
+    "next": "16.2.9",
+    "react": "19.2.7",
+    "react-dom": "19.2.7"
   },
   "devDependencies": {
-    "@tailwindcss/postcss": "^4",
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",

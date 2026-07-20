@@ -19,16 +19,15 @@ for = "/*"
   Strict-Transport-Security = "max-age=31536000; includeSubDomains; preload"
   # 필요 없는 브라우저 권한 OFF
   Permissions-Policy = "geolocation=(), microphone=(), camera=(), payment=(), usb=()"
-  # 실전형 CSP (CDN/외부이미지 사용 고려)
-  # 외부 CSS/폰트를 cdnjs만 쓰고 있다면 그대로 사용.
-  # 외부 이미지를 계속 쓰면 img-src https: 유지. 모두 /public로 옮기면 'self'로 줄여도 됨.
+  # Google Docs 게시글 임베드와 외부 히어로 이미지를 허용합니다.
   Content-Security-Policy = """
   default-src 'self';
   script-src 'self' 'unsafe-inline' 'unsafe-eval';
-  style-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com;
+  style-src 'self' 'unsafe-inline';
   img-src 'self' data: https:;
-  font-src 'self' data: https://cdnjs.cloudflare.com;
+  font-src 'self' data:;
   connect-src 'self';
+  frame-src https://docs.google.com;
   frame-ancestors 'self';
   base-uri 'self';
   form-action 'self';
